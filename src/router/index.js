@@ -32,7 +32,13 @@ const routes = [
     path: '/markalar',
     name: 'Trademarks',
     component: () => import('../views/Trademarks.vue'),
-  }
+  },
+  {
+    path: '/kayit',
+    name: 'Register',
+    component: () => import('../views/Register.vue'),
+  },
+  
 ]
 
 const router = new VueRouter({

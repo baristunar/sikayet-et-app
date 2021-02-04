@@ -1,9 +1,14 @@
 <template>
-  <h1>profile</h1>
+  <Profile/>
 </template>
 
 <script>
-export default {};
+import Profile from "../components/Profile/Profile";
+export default {
+  components:{
+    Profile
+  }
+};
 </script>
 
 <style>
