@@ -1,11 +1,14 @@
 <template>
   <div>
     <v-card>
+      
       <v-toolbar flat color="primary" dark>
         <!-- Menu -->
 
         <v-toolbar-title>Kullanıcı Bilgileri</v-toolbar-title>
+
       </v-toolbar>
+
       <v-tabs vertical>
         <v-tab v-for="item in profileMenu" :key="item.title" c>
           <v-icon left> {{ item.icon }}</v-icon>
@@ -28,6 +31,7 @@
             </v-card-text>
           </v-card>
         </v-tab-item>
+
         <v-tab-item>
           <v-card flat>
             <v-card-text>
@@ -35,6 +39,7 @@
             </v-card-text>
           </v-card>
         </v-tab-item>
+
       </v-tabs>
     </v-card>
   </div>
@@ -64,10 +69,6 @@ export default {
         {
           title: "Şifre Değişikliği",
           icon: "mdi-lock",
-        },
-        {
-          title: "Üyelik İptali",
-          icon: "mdi-close-circle",
         },
       ],
     };

@@ -37,8 +37,12 @@ const routes = [
     path: '/kayit',
     name: 'Register',
     component: () => import('../views/Register.vue'),
+  }, {
+    path: '/giris',
+    name: 'Login',
+    component: () => import('../views/Login.vue'),
   },
-  
+
 ]
 
 const router = new VueRouter({

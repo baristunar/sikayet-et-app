@@ -1,7 +1,7 @@
 <template>
   <v-container class="mx-auto pa-15 my-auto">
     <v-layout>
-      <!-- Hero Starts -->
+  
       <v-flex row align-center class="mx-auto mt-15" justify-space-around>
         <h1 class="display-3 info--text font-weight-bold">
           <strong>Çözüme kavuşmak için </strong> <br /><br />
@@ -14,8 +14,6 @@
         />
       </v-flex>
     </v-layout>
-    <!-- Hero ends -->
-
   </v-container>
 </template>
 

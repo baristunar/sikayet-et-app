@@ -23,7 +23,6 @@
             :rules="[rules.required]"
             :type="newPwShow ? 'text' : 'password'"
             name="newPassword"
-            counter
             @click:append="newPwShow = !newPwShow"
             label="Yeni Şifre"
           ></v-text-field>

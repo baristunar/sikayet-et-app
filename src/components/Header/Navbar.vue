@@ -35,7 +35,7 @@
             >Çıkış Yap <v-icon right>mdi-logout-variant</v-icon>
           </v-btn> -->
           
-           <v-btn text color="grey"
+           <v-btn text color="grey" to="/giris"
             >GİRİŞ YAP/ÜYE OL <v-icon right>mdi-login-variant</v-icon>
           </v-btn> 
         </v-flex>
@@ -85,7 +85,7 @@
         <!-- <v-btn text color="white" class="vissible-xs-only"
           >Çıkış Yap <v-icon right>mdi-logout-variant</v-icon>
         </v-btn> -->
-        <v-btn text color="grey"
+        <v-btn text color="white" to="/giris"
           >GİRİŞ YAP/ÜYE OL <v-icon right>mdi-login-variant</v-icon>
         </v-btn>
       </v-layout>
