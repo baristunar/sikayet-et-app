@@ -31,13 +31,18 @@
             </v-text-field>
           </v-col>
 
-         <!--  <v-btn text color="grey" class="hidden-xs-only"
+          <v-btn
+            text
+            color="grey"
+            class="hidden-xs-only"
+            v-if="isAuthenticated"
+            @click.prevent="logout"
             >Çıkış Yap <v-icon right>mdi-logout-variant</v-icon>
-          </v-btn> -->
-          
-           <v-btn text color="grey" to="/giris"
+          </v-btn>
+
+          <v-btn v-if="!isAuthenticated" text color="grey" to="/giris"
             >GİRİŞ YAP/ÜYE OL <v-icon right>mdi-login-variant</v-icon>
-          </v-btn> 
+          </v-btn>
         </v-flex>
       </v-layout>
     </v-app-bar>
@@ -47,7 +52,7 @@
     <!-- Left panel starts-->
 
     <v-navigation-drawer app class="primary" v-model="drawer">
-      <v-layout column align-center>
+      <v-layout v-if="isAuthenticated" column align-center>
         <v-flex class="my-5">
           <v-avatar size="128">
             <img :src="user.avatar" :alt="user.full_name" />
@@ -60,7 +65,8 @@
           </p>
         </v-flex>
       </v-layout>
-      <v-divider class="white"></v-divider>
+      <v-divider v-if="isAuthenticated" class="white"></v-divider>
+
       <v-list class="mt-5">
         <v-list-item
           v-for="link in links"
@@ -82,10 +88,16 @@
       </v-list>
 
       <v-layout column align-center class="mt-5">
-        <!-- <v-btn text color="white" class="vissible-xs-only"
+        <v-btn
+          v-if="isAuthenticated"
+          text
+          color="white"
+          class="vissible-xs-only"
+          @click.prevent="logout"
           >Çıkış Yap <v-icon right>mdi-logout-variant</v-icon>
-        </v-btn> -->
-        <v-btn text color="white" to="/giris"
+        </v-btn>
+
+        <v-btn v-if="!isAuthenticated" text color="white" to="/giris"
           >GİRİŞ YAP/ÜYE OL <v-icon right>mdi-login-variant</v-icon>
         </v-btn>
       </v-layout>
@@ -96,6 +108,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -108,13 +121,9 @@ export default {
           "https://media-exp1.licdn.com/dms/image/C4D03AQFly-l_jhZGoQ/profile-displayphoto-shrink_400_400/0/1609102801471?e=1617235200&v=beta&t=8nhTMAl2SP61CQjWdc-T3dhZbhcowtmmHxhKxCEsXmk",
       },
       links: [
+        { icon: "mdi-home", text: "Anasayfa", route: "/" },
         {
-          icon: "mdi-home",
-          text: "Anasayfa",
-          route: "/",
-        },
-        {
-          icon: "mdi-account-box",
+          icon: "mdi-account-edit",
           text: "Profil",
           route: "/profil",
         },
@@ -130,6 +139,18 @@ export default {
         },
       ],
     };
+  },
+
+  computed: {
+    ...mapGetters({
+      isAuthenticated: "user/_isAuthenticated",
+    }),
+  },
+
+  methods: {
+    logout() {
+      this.$store.commit("user/logout");
+    },
   },
 };
 </script>

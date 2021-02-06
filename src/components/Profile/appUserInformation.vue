@@ -10,7 +10,7 @@
 
           <v-select
             disabled
-            :items="sex"
+            :items="gender"
             item-text="title"
             item-value="value"
             label="Cinsiyet"
@@ -22,7 +22,9 @@
 
       <!-- Right Section -->
       <v-col cols="6">
-        <v-text-field disabled label="Soyisim"></v-text-field>
+        <v-text-field disabled label="Soyisim">{{
+          user.lastname
+        }}</v-text-field>
         <v-text-field disabled label="T.C. Kimlik No"></v-text-field>
         <v-text-field disabled label="Doğum Tarihi"></v-text-field>
         <v-text-field disabled label="Cep Telefonu"></v-text-field>
@@ -33,10 +35,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      sex: [
+      gender: [
         {
           title: "Erkek",
           value: 1,
@@ -51,6 +54,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    ...mapGetters({
+      user: "user/_currentUser",
+    }),
   },
 };
 </script>

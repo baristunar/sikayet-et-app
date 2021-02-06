@@ -7,15 +7,15 @@
             >Hesabınız yok mu? Üye ol!</v-btn
           >
         </v-col>
-        <v-col cols="8" class="d-none d-md-flex">
+        <v-col cols="6" class="d-none d-md-flex">
           <v-img src="@/assets/images/login.jpg" alt="login" />
         </v-col>
-        <v-col cols="4" xs12>
+        <v-col cols="6" xs12>
           <v-card-title> Giriş Yap </v-card-title>
           <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation class="pa-5">
               <v-text-field
-                v-model="loginData.userMail"
+                v-model="loginData.email"
                 :rules="[loginRules.requiredField]"
                 label="E-posta"
                 required
@@ -25,8 +25,8 @@
               ></v-text-field>
 
               <v-text-field
-                v-model="loginRules.userPw"
-                :rules="requiredField"
+                v-model="loginData.password"
+                :rules="[loginRules.requiredField]"
                 label="Şifre"
                 required
                 rounded
@@ -34,7 +34,20 @@
                 dense
               ></v-text-field>
 
-              <v-btn color="primary" class="float-right"> Giriş yap </v-btn>
+              <v-alert
+                v-if="alert"
+                color="warning darken-5"
+                dark
+                dense
+                icon="mdi-alert"
+                prominent
+              >
+                Hatalı Kullanıcı Adı/E-posta
+              </v-alert>
+
+              <v-btn color="primary" class="float-right" @click="login">
+                Giriş yap
+              </v-btn>
             </v-form>
           </v-card-text>
         </v-col>
@@ -44,19 +57,31 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      valid: false,
+
       loginData: {
-        userMail: "",
-        userPw: "",
+        email: "",
+        password: "",
       },
       loginRules: {
-        requiredField: [(v) => !!v || "Bu alan zorunludur"],
+        requiredField: (v) => !!v || "Bu alan zorunludur",
       },
     };
   },
-  methods: {},
+  methods: {
+    login() {
+      this.$store.dispatch("user/login", { ...this.loginData });
+    },
+  },
+  computed: {
+    ...mapGetters({
+      alert: "user/_loginReject",
+    }),
+  },
 };
 </script>
 

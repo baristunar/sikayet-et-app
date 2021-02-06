@@ -1,9 +1,18 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Barış",
+      "lastname": "Tunar",
+      "password": "12345678",
+      "email": "tunarbaris7@gmail.com",
+      "gender": "erkek",
+      "userType": 1,
+      "city": null,
+      "phone": null,
+      "trIdNo": null,
+      "birthday": null,
+      "adress": null,
+      "id": 1
     }
   ],
   "comments": [
@@ -12,8 +21,5 @@
       "body": "some comment",
       "postId": 1
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -29,7 +29,7 @@
 
           <v-text-field
             v-model="newPassword2"
-            :append-icon="passwordShow ? 'mdi-eye' : 'mdi-eye-off'"
+            :append-icon="newPw2Show ? 'mdi-eye' : 'mdi-eye-off'"
             :rules="[rules.required]"
             :type="newPw2Show ? 'text' : 'password'"
             name="newPassword2"
