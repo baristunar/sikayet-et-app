@@ -1,8 +1,7 @@
 <template>
   <v-container class="mx-auto pa-15 my-auto">
     <v-layout>
-  
-      <v-flex row align-center class="mx-auto mt-15" justify-space-around>
+      <v-flex row align-center class="mx-auto mt-15">
         <h1 class="display-3 info--text font-weight-bold">
           <strong>Çözüme kavuşmak için </strong> <br /><br />
           <span class="error--text"> Şikayet </span>Et
