@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <v-card>
       
       <v-toolbar flat color="primary" dark>
@@ -42,7 +42,7 @@
 
       </v-tabs>
     </v-card>
-  </div>
+
 </template>
 
 <script>

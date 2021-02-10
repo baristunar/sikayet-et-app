@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <v-layout row justify-center align-center>
       <v-col cols="12" sm="12" md="6">
         <v-form ref="form" v-model="formValidation">
@@ -70,7 +70,7 @@
         </v-form>
       </v-col>
     </v-layout>
-  </div>
+  
 </template>
 
 <script>

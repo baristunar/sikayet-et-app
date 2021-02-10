@@ -61,7 +61,6 @@ export default ({
         },
 
         setUser(state, pUser) {
-
             state.activeUser = pUser;
             localStorage.user = JSON.stringify(pUser);
         },

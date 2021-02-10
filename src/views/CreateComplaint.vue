@@ -1,16 +1,17 @@
 <template>
   <v-container class="mx-auto pa-15 my-auto">
-    <Homepage />
+    <create-complaint />
   </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import Homepage from "@/components/Homepage/Homepage";
+import CreateComplaint from "@/components/CreateComplaint/CreateComplaint";
 export default {
   components: {
-    Homepage,
+    CreateComplaint,
   },
-
 };
 </script>
+
+<style>
+</style>

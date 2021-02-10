@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <v-row>
       <v-col cols="6" class="mx-auto">
         <v-form>
@@ -41,7 +41,7 @@
         </v-form>
       </v-col>
     </v-row>
-  </div>
+  
 </template>
 
 <script>

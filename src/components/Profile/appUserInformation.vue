@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <v-row class="pa-5">
       <!-- Left Section -->
       <v-col cols="6">
@@ -31,7 +31,7 @@
         <v-btn class="info float-right mr-3"> Düzenle</v-btn>
       </v-col>
     </v-row>
-  </div>
+
 </template>
 
 <script>

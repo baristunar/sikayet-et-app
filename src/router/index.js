@@ -12,14 +12,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/profil',
     name: 'Profile',
     component: () => import('../views/Profile.vue'),
@@ -43,6 +35,11 @@ const routes = [
     name: 'Login',
     component: () => import('../views/Login.vue'),
   },
+  {
+    path: '/sikayetyaz',
+    name: 'CreateComplaint',
+    component: () => import('../views/CreateComplaint.vue'),
+  },
 
 ]
 
@@ -58,6 +55,7 @@ router.beforeEach((to, from, next) => {
 
   const authenticatedPages = [
     "Profile",
+    "CreateComplaint"
   ];
 
   // Is there a user in local storage?
@@ -76,6 +74,10 @@ router.beforeEach((to, from, next) => {
 
   if (!isAuthenticated && authenticatedPages.indexOf(to.name) > -1) {
     next({ name: "Login" });
+  }
+
+  if (isAuthenticated && to.name === "Login" || to.name === "Register") {
+    next("/");
   }
 
   next();

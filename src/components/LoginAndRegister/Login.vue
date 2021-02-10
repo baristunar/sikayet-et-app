@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <v-card class="pa-5">
       <v-row class="d-flex align-center pa-5">
         <v-col cols="12">
@@ -53,7 +53,7 @@
         </v-col>
       </v-row>
     </v-card>
-  </div>
+
 </template>
 
 <script>

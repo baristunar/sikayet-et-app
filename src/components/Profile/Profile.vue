@@ -1,9 +1,9 @@
 <template>
-  <div>
+
     <v-container class="mx-auto pa-15 my-auto">
       <app-profile-menu />
     </v-container>
-  </div>
+
 </template>
 
 <script>

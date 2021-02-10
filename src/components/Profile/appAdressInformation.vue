@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <!-- Left Section -->
 
     <v-form>
@@ -19,7 +19,7 @@
         </v-col>
       </v-row>
     </v-form>
-  </div>
+
 </template>
 
 <script>

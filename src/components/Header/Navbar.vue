@@ -136,7 +136,11 @@ export default {
           icon: "mdi-domain",
           text: "Markalar",
           route: "/markalar",
-        },
+        },{
+          icon: "mdi-lead-pencil",
+          text: "Şikayet Yaz",
+          route: "/sikayetyaz",
+        }
       ],
     };
   },
