@@ -118,7 +118,7 @@ export default {
         full_name: "Barış Tunar",
         profession: "Front End Developer",
         avatar:
-          "https://media-exp1.licdn.com/dms/image/C4D03AQFly-l_jhZGoQ/profile-displayphoto-shrink_400_400/0/1609102801471?e=1617235200&v=beta&t=8nhTMAl2SP61CQjWdc-T3dhZbhcowtmmHxhKxCEsXmk",
+          "https://media-exp1.licdn.com/dms/image/C4D03AQHJRFczLj7dwg/profile-displayphoto-shrink_100_100/0/1612359477757?e=1618444800&v=beta&t=Cq11sTJLIeKU13b0nLo3RIvWq8VYQEWRK7r3SJUMedU",
       },
       links: [
         { icon: "mdi-home", text: "Anasayfa", route: "/" },
@@ -126,6 +126,11 @@ export default {
           icon: "mdi-account-edit",
           text: "Profil",
           route: "/profil",
+        },
+        {
+          icon: "mdi-view-dashboard",
+          text: "Admin Panel",
+          route: "/admin",
         },
         {
           icon: "mdi-comment-text-multiple",
@@ -136,11 +141,12 @@ export default {
           icon: "mdi-domain",
           text: "Markalar",
           route: "/markalar",
-        },{
+        },
+        {
           icon: "mdi-lead-pencil",
           text: "Şikayet Yaz",
           route: "/sikayetyaz",
-        }
+        },
       ],
     };
   },

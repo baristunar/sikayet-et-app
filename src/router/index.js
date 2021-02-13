@@ -40,6 +40,11 @@ const routes = [
     name: 'CreateComplaint',
     component: () => import('../views/CreateComplaint.vue'),
   },
+  {
+    path: '/admin',
+    name: 'AdminPanel',
+    component: () => import('../views/AdminPanel.vue'),
+  },
 
 ]
 
@@ -52,7 +57,6 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
 
   let user = null;
-
   const authenticatedPages = [
     "Profile",
     "CreateComplaint"
@@ -72,6 +76,7 @@ router.beforeEach((to, from, next) => {
 
   const isAuthenticated = store.getters["user/_isAuthenticated"];
 
+
   if (!isAuthenticated && authenticatedPages.indexOf(to.name) > -1) {
     next({ name: "Login" });
   }
@@ -79,6 +84,13 @@ router.beforeEach((to, from, next) => {
   if (isAuthenticated && to.name === "Login" || to.name === "Register") {
     next("/");
   }
+
+
+  if (user?.userType !== 1 && to.name === "AdminPanel") {
+    next("/");
+  }
+
+
 
   next();
 });

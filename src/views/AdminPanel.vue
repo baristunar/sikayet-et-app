@@ -1,14 +1,14 @@
 <template>
   <v-container class="mx-auto pa-15 my-auto">
-    <trademarks />
+    <admin-panel />
   </v-container>
 </template>
 
 <script>
-import Trademarks from "@/components/Trademarks/Trademarks";
+import AdminPanel from "@/components/AdminPanel/AdminPanel";
 export default {
   components: {
-    Trademarks,
+    AdminPanel,
   },
 };
 </script>
