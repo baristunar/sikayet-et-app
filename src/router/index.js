@@ -77,11 +77,12 @@ router.beforeEach((to, from, next) => {
   const isAuthenticated = store.getters["user/_isAuthenticated"];
 
 
+
   if (!isAuthenticated && authenticatedPages.indexOf(to.name) > -1) {
     next({ name: "Login" });
   }
 
-  if (isAuthenticated && to.name === "Login" || to.name === "Register") {
+  if ((isAuthenticated) && (to.name === "Login" || to.name === "Register")) {
     next("/");
   }
 
