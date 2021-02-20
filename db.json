@@ -18,7 +18,7 @@
       "firstname": "Kaan",
       "lastname": "Karahan",
       "gender": "Erkek",
-      "password": "11111111",
+      "password": "1",
       "userType": 1,
       "registerType": 1,
       "city": null,
@@ -133,7 +133,7 @@
       "companyLogo": "https://img-turkcellweb.mncdn.com/SiteAssets/Hakkimizda/genel-bakis/logolarimiz/TURKCELL_DIKEY_ERKEK_LOGO.jpg",
       "registerType": 2,
       "email": "turkcell@turkcell.com",
-      "password": "12345678",
+      "password": "1",
       "phone": null,
       "adress": null,
       "id": 1
@@ -143,7 +143,7 @@
       "companyLogo": "https://media-exp1.licdn.com/dms/image/C560BAQGnoFVp_NsYcQ/company-logo_200_200/0/1519855985122?e=2159024400&v=beta&t=lbsFzwq8klZGMEvQ86c6g7hU9blYfnsmgCvWG-KjAnw",
       "registerType": 2,
       "email": "migros@migros.com.tr",
-      "password": "123",
+      "password": "1",
       "phone": null,
       "adress": null,
       "id": 2

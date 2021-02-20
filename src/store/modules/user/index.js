@@ -109,22 +109,49 @@ export default ({
             }).catch(e => console.log("newcompany error ", e));
         },
         login({ commit }, pUser) {
-            appAxios.get(`/users?email=${pUser.email}&password=${pUser.password}`).then(login_response => {
-                console.log(login_response.status);
-                if (login_response.status === 200 && login_response.data.length > 0) {
-                    commit("setUser", login_response.data[0])
-                    commit("setLinks");
-                    router.push("/");
-                }
-                else {
-                    // Creates Login Error
-                    commit("loginReject", true);
 
-                    setTimeout(() => {
-                        commit("loginReject", false)
-                    }, 3000)
-                }
-            })
+            if (pUser.registerType) {
+                appAxios.get(`/users?email=${pUser.email}&password=${pUser.password}`).then(login_response => {
+                    console.log(login_response.status);
+                    if (login_response.status === 200 && login_response.data.length > 0) {
+                        commit("setUser", login_response.data[0])
+                        commit("setLinks");
+
+                        router.push("/");
+                    }
+                    else {
+                        // Creates Login Error
+                        commit("loginReject", true);
+
+                        setTimeout(() => {
+                            commit("loginReject", false)
+                        }, 3000)
+                    }
+                })
+            }
+
+            else if (!pUser.registerType) {
+                appAxios.get(`/trademarks?email=${pUser.email}&password=${pUser.password}`).then(login_response => {
+                    console.log(login_response.status);
+                    if (login_response.status === 200 && login_response.data.length > 0) {
+                        commit("setUser", login_response.data[0])
+                        commit("setLinks");
+                        router.push("/");
+                    }
+                    else {
+                        // Creates Login Error
+                        commit("loginReject", true);
+
+                        setTimeout(() => {
+                            commit("loginReject", false)
+                        }, 3000)
+                    }
+                })
+            }
+
+
+
+
         },
     },
     getters: {

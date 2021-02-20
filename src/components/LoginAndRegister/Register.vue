@@ -22,6 +22,7 @@
             required
           ></v-text-field>
         </div>
+        
         <div v-else>
           <v-text-field
             v-model="companyName"
