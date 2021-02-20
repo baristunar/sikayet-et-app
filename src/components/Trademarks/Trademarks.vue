@@ -61,6 +61,7 @@ export default {
   data() {
     return {
       rating: 5,
+      
     };
   },
   created() {

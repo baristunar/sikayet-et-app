@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import user from './modules/user'
 import trademarks from './modules/trademarks'
+import complaints from './modules/complaints'
 
 
 
@@ -19,6 +20,7 @@ export default new Vuex.Store({
   },
   modules: {
     user,
-    trademarks
+    trademarks,
+    complaints
   }
 })

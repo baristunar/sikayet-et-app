@@ -5,11 +5,34 @@
         <v-card-title>Şikayet Oluştur</v-card-title>
         <v-card-text>
           <v-form class="pa-5">
-            <v-text-field label="Başlık" prepend-icon="mdi-format-title"></v-text-field>
-            <v-textarea prepend-icon="mdi-table-of-contents" label="Şikayet Detayı" no-resize></v-textarea>
+            <v-text-field
+              v-model="complaintHeader"
+              label="Başlık"
+              prepend-icon="mdi-format-title"
+            ></v-text-field>
 
-            <v-autocomplate label="Marka"></v-autocomplate>
-            <v-btn color="success" class="float-right">Tamamla</v-btn>
+            <v-textarea
+              v-model="complaintDescription"
+              prepend-icon="mdi-table-of-contents"
+              label="Şikayet Detayı"
+              no-resize
+            ></v-textarea>
+
+            <v-autocomplete
+              v-model="selectedTrademark"
+              :items="trademarks"
+              item-text="companyName"
+              prepend-icon="mdi-trademark"
+              color="primary"
+              label="Şikayet Etmek İstediğiniz Marka"
+              item-value="id"
+              clearable
+            >
+            </v-autocomplete>
+
+            <v-btn color="success" class="float-right" @click="createComplaint"
+              >Tamamla</v-btn
+            >
           </v-form>
         </v-card-text>
       </v-card>
@@ -21,7 +44,41 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      activeUser: null,
+      selectedTrademark: null,
+      complaintHeader: "",
+      complaintDescription: "",
+    };
+  },
+  created() {
+    this.$store.dispatch("trademarks/getTrademarks");
+    this.activeUser = JSON.parse(localStorage.getItem("user"));
+    console.log("activeUser => ", this.activeUser);
+  },
+  computed: {
+    ...mapGetters({
+      trademarks: "trademarks/_getTrademarks",
+    }),
+  },
+  methods: {
+    createComplaint() {
+      const complaintData = {
+        user: this.activeUser.id,
+        header: this.complaintHeader,
+        description: this.complaintDescription,
+        trademark: this.selectedTrademark,
+        createdAt: new Date(),
+      };
+      console.log(typeof this.activeUser);
+
+      this.$store.dispatch("complaints/newComplaint", complaintData);
+    },
+  },
+};
 </script>
 
 <style>

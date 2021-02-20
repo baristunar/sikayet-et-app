@@ -12,7 +12,8 @@
       "trIdNo": null,
       "birthday": null,
       "adress": null,
-      "id": 1
+      "id": 1,
+      "complaints": []
     },
     {
       "firstname": "Kaan",
@@ -27,7 +28,8 @@
       "email": "kaan@example.com",
       "phone": null,
       "adress": null,
-      "id": 2
+      "id": 2,
+      "complaints": []
     },
     {
       "firstname": "Melike",
@@ -42,7 +44,8 @@
       "email": "melike@example.com",
       "phone": null,
       "adress": null,
-      "id": 3
+      "id": 3,
+      "complaints": []
     },
     {
       "firstname": "Sinan",
@@ -57,7 +60,8 @@
       "password": "12345678",
       "phone": null,
       "adress": null,
-      "id": 4
+      "id": 4,
+      "complaints": []
     },
     {
       "firstname": "Adem",
@@ -72,7 +76,8 @@
       "password": "12345678",
       "phone": null,
       "adress": null,
-      "id": 5
+      "id": 5,
+      "complaints": []
     },
     {
       "firstname": "Selin",
@@ -87,7 +92,8 @@
       "password": "123",
       "phone": null,
       "adress": null,
-      "id": 6
+      "id": 6,
+      "complaints": []
     },
     {
       "firstname": "Cengiz",
@@ -102,7 +108,8 @@
       "password": "123",
       "phone": null,
       "adress": null,
-      "id": 7
+      "id": 7,
+      "complaints": []
     },
     {
       "firstname": "Gökhan",
@@ -117,14 +124,70 @@
       "password": "123",
       "phone": null,
       "adress": null,
-      "id": 8
+      "id": 8,
+      "complaints": []
     }
   ],
-  "comments": [
+  "complaints": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "header": "Migrosa alınmadım",
+      "description": "migrosa covid olmadığım halde alınmadım!",
+      "trademark": 2,
+      "createdAt": "2021-02-20T13:11:28.899Z",
+      "id": 1
+    },
+    {
+      "header": "test",
+      "description": "test mesajı",
+      "trademark": 3,
+      "createdAt": "2021-02-20T13:14:08.087Z",
+      "id": 2
+    },
+    {
+      "header": "Migrosa alınmadım",
+      "description": "dsada",
+      "trademark": 2,
+      "createdAt": "2021-02-20T13:14:25.406Z",
+      "id": 3
+    },
+    {
+      "header": "Migrosa alınmadım",
+      "description": "sadasd",
+      "trademark": 1,
+      "createdAt": "2021-02-20T13:14:53.090Z",
+      "id": 4
+    },
+    {
+      "user": 1,
+      "header": "test",
+      "description": "sada",
+      "trademark": 1,
+      "createdAt": "2021-02-20T13:17:27.263Z",
+      "id": 5
+    },
+    {
+      "user": 2,
+      "header": "hattım çalışmıyor",
+      "description": "hattım durduk yere kapandı hiçbir işlem yapamıyorum ",
+      "trademark": 1,
+      "createdAt": "2021-02-20T13:19:15.472Z",
+      "id": 6
+    },
+    {
+      "user": 2,
+      "header": "hattım çalışmıyor",
+      "description": "hattım durduk yere kapandı hiçbir işlem yapamıyorum ",
+      "trademark": 2,
+      "createdAt": "2021-02-20T13:19:32.101Z",
+      "id": 7
+    },
+    {
+      "user": 2,
+      "header": "hattım çalışmıyor",
+      "description": "hattım durduk yere kapandı hiçbir işlem yapamıyorum ",
+      "trademark": 3,
+      "createdAt": "2021-02-20T13:19:53.236Z",
+      "id": 8
     }
   ],
   "trademarks": [
@@ -136,7 +199,8 @@
       "password": "1",
       "phone": null,
       "adress": null,
-      "id": 1
+      "id": 1,
+      "complaints": []
     },
     {
       "companyName": "Migros",
@@ -146,7 +210,8 @@
       "password": "1",
       "phone": null,
       "adress": null,
-      "id": 2
+      "id": 2,
+      "complaints": []
     },
     {
       "companyName": "Resimsiz Test",
@@ -156,7 +221,8 @@
       "password": "1",
       "phone": null,
       "adress": null,
-      "id": 3
+      "id": 3,
+      "complaints": []
     }
   ]
 }

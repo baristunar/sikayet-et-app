@@ -127,6 +127,7 @@ export default {
         city: null,
         trIdNo: null,
         birthday: null,
+        complaints: [],
       };
 
       const corporateData = {
