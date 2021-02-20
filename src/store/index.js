@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import user from './modules/user'
+import trademarks from './modules/trademarks'
 
 
 
@@ -13,11 +14,11 @@ export default new Vuex.Store({
   },
   actions: {
   },
-  getters:{
+  getters: {
 
   },
   modules: {
     user,
-  
+    trademarks
   }
 })

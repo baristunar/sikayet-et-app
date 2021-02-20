@@ -1,18 +1,18 @@
 <template>
-  <v-row>
+  <v-row class="justify-center">
     <v-col cols="8">
       <h1 class="info--text">Markalar</h1>
-
+      <!--       <pre>{{ getTrademarks }}</pre> -->
       <v-card
         class="d-flex pa-5 justify-space-around mt-5"
         color="blue-grey lighten-5"
-        v-for="i in 10"
-        :key="i"
+        v-for="item in trademarks"
+        :key="item.id"
       >
         <v-card class="d-flex align-center justify-center">
           <v-card-actions>
             <v-img
-              src="https://files.sikayetvar.com/lg/cmp/20/2035.png?1527662585"
+              :src="item.companyLogo"
               max-width="88"
               max-height="48.83"
               alt=""
@@ -22,7 +22,7 @@
         </v-card>
 
         <v-card-text class="font-weight-bold d-flex flex-column align-center"
-          ><p>Sürat Kargo</p>
+          ><p>{{ item.companyName }}</p>
 
           <p>
             <v-rating
@@ -56,11 +56,20 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
       rating: 5,
     };
+  },
+  created() {
+    this.$store.dispatch("trademarks/getTrademarks");
+  },
+  computed: {
+    ...mapGetters({
+      trademarks: "trademarks/_getTrademarks",
+    }),
   },
 };
 </script>
