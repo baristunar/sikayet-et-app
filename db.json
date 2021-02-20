@@ -3,16 +3,121 @@
     {
       "name": "Barış",
       "lastname": "Tunar",
-      "password": "12345678",
-      "email": "tunarbaris7@gmail.com",
+      "password": "1",
+      "email": "baris@kodluyoruz.org",
       "gender": "erkek",
-      "userType": 1,
+      "userType": 0,
       "city": null,
       "phone": null,
       "trIdNo": null,
       "birthday": null,
       "adress": null,
       "id": 1
+    },
+    {
+      "firstname": "Kaan",
+      "lastname": "Karahan",
+      "gender": "Erkek",
+      "password": "11111111",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "email": "kaan@example.com",
+      "phone": null,
+      "adress": null,
+      "id": 2
+    },
+    {
+      "firstname": "Melike",
+      "lastname": "Demir",
+      "gender": "Kadin",
+      "password": "22222",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "email": "melike@example.com",
+      "phone": null,
+      "adress": null,
+      "id": 3
+    },
+    {
+      "firstname": "Sinan",
+      "lastname": "Yüksel",
+      "gender": "Erkek",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "email": "sinan@example.com",
+      "password": "12345678",
+      "phone": null,
+      "adress": null,
+      "id": 4
+    },
+    {
+      "firstname": "Adem",
+      "lastname": "İnce",
+      "gender": "Erkek",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "email": "adem@example.com",
+      "password": "12345678",
+      "phone": null,
+      "adress": null,
+      "id": 5
+    },
+    {
+      "firstname": "Selin",
+      "lastname": "Bayar",
+      "gender": "Kadin",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "email": "selin@example.com",
+      "password": "123",
+      "phone": null,
+      "adress": null,
+      "id": 6
+    },
+    {
+      "firstname": "Cengiz",
+      "lastname": "Mataracı",
+      "gender": "Erkek",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "email": "cengiz@example.com",
+      "password": "123",
+      "phone": null,
+      "adress": null,
+      "id": 7
+    },
+    {
+      "firstname": "Gökhan",
+      "lastname": "Kandemir",
+      "gender": "Erkek",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "email": "gokhan@example.com",
+      "password": "123",
+      "phone": null,
+      "adress": null,
+      "id": 8
     }
   ],
   "comments": [
@@ -22,8 +127,26 @@
       "postId": 1
     }
   ],
-
   "trademarks": [
-    
+    {
+      "companyName": "Turkcell",
+      "companyLogo": "https://img-turkcellweb.mncdn.com/SiteAssets/Hakkimizda/genel-bakis/logolarimiz/TURKCELL_DIKEY_ERKEK_LOGO.jpg",
+      "registerType": 2,
+      "email": "turkcell@turkcell.com",
+      "password": "12345678",
+      "phone": null,
+      "adress": null,
+      "id": 1
+    },
+    {
+      "companyName": "Migros",
+      "companyLogo": "https://media-exp1.licdn.com/dms/image/C560BAQGnoFVp_NsYcQ/company-logo_200_200/0/1519855985122?e=2159024400&v=beta&t=lbsFzwq8klZGMEvQ86c6g7hU9blYfnsmgCvWG-KjAnw",
+      "registerType": 2,
+      "email": "migros@migros.com.tr",
+      "password": "123",
+      "phone": null,
+      "adress": null,
+      "id": 2
+    }
   ]
 }

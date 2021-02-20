@@ -28,12 +28,17 @@ export default ({
         ],
         loginReject: false,
         activeUser: null,
-        newUser: []
+        newUser: [],
+        newCompany: []
     },
     mutations: {
         newUser(state, pUserDatas) {
             state.newUser = pUserDatas;
-            console.log(state.newUser);
+            console.log("state.new user", state.newUser);
+        },
+        newCompany(state, pCompanyDatas) {
+            state.newCompany = pCompanyDatas;
+            console.log("state new comp", state.newCompany);
         },
         setLinks(state) {
             state.links = [{
@@ -79,17 +84,33 @@ export default ({
             appAxios.post("/users", pUserDatas).then(newUser_response => {
                 console.log(pUserDatas);
                 console.log('newUser :>> ', newUser_response.data);
-
-                if (newUser_response.status === 200) {
+                console.log(newUser_response.status)
+                if (newUser_response.status === 201) {
                     commit("newUser", newUser_response.data);
                     commit("setUser", pUserDatas);
+                    console.log(newUser_response.status)
+                    router.push("/");
                 }
 
             }).catch(e => console.log("error", e))
         },
+        newCompany({ commit }, pCompanyDatas) {
+            appAxios.post("/trademarks", pCompanyDatas).then(newCompany_response => {
+                console.log(pCompanyDatas);
+                console.log("newcompany => ", newCompany_response.data);
+                console.log(newCompany_response.status)
+                if (newCompany_response.status === 201) {
+                    commit("newCompany", newCompany_response.data);
+                    commit("setUser", pCompanyDatas);
+
+                    router.push("/");
+
+                }
+            }).catch(e => console.log("newcompany error ", e));
+        },
         login({ commit }, pUser) {
             appAxios.get(`/users?email=${pUser.email}&password=${pUser.password}`).then(login_response => {
-
+                console.log(login_response.status);
                 if (login_response.status === 200 && login_response.data.length > 0) {
                     commit("setUser", login_response.data[0])
                     commit("setLinks");
