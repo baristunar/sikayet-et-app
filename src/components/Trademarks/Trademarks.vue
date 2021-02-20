@@ -46,7 +46,7 @@
             <div class="pa-2 text-center">
               <span>Şikayet Sayısı</span>
               <br />
-              <span>45.000</span>
+              <span>{{ item.complaints.length }}</span>
             </div>
           </v-card-text>
         </v-card>
@@ -61,11 +61,10 @@ export default {
   data() {
     return {
       rating: 5,
-      
     };
   },
   created() {
-    this.$store.dispatch("trademarks/getTrademarks");
+    this.$store.dispatch("trademarks/fetchTrademarks");
   },
   computed: {
     ...mapGetters({

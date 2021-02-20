@@ -14,7 +14,7 @@ export default ({
         }
     },
     actions: {
-        getTrademarks({ commit }) {
+        fetchTrademarks({ commit }) {
             appAxios.get("/trademarks").then(getTrademarks_response => {
                 console.log(getTrademarks_response);
                 console.log('getTrademarks_response.status :>> ', getTrademarks_response.status);

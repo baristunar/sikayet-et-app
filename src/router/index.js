@@ -81,6 +81,9 @@ router.beforeEach((to, from, next) => {
   if (!isAuthenticated && authenticatedPages.indexOf(to.name) > -1) {
     next({ name: "Login" });
   }
+  if (user?.registerType !== 1 && to.name === "CreateComplaint") {
+    next("/");
+  }
 
   if ((isAuthenticated) && (to.name === "Login" || to.name === "Register")) {
     next("/");

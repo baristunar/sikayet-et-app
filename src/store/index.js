@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import user from './modules/user'
 import trademarks from './modules/trademarks'
 import complaints from './modules/complaints'
+import loading from './modules/loading'
 
 
 
@@ -12,15 +13,16 @@ export default new Vuex.Store({
   state: {
   },
   mutations: {
+
   },
   actions: {
   },
   getters: {
-
   },
   modules: {
     user,
     trademarks,
-    complaints
+    complaints,
+    loading
   }
 })

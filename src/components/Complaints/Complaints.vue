@@ -1,36 +1,35 @@
 <template>
-  <v-row>
+  <v-row class="justify-space-around">
     <!-- Cards -->
-    <v-col cols="12" sm="6" md="8">
+    <v-col cols="6">
       <v-card
         class="mb-5 pa-5"
-        v-for="i in 10"
-        :key="i"
+        v-for="item in complaints"
+        :key="item.id"
         outlined
         shaped
-        elevation="10"
+        :elevation="10"
       >
         <v-card-title class="mb-3">
           <v-avatar class="pl-1">
             <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
           </v-avatar>
-          <h3 class="pl-4">MNG KARGO PAKETİMİ GETİRMEDİ</h3>
+          <h3 class="pl-4">{{ item.header }}</h3>
           <h3 class="pl-4 ml-auto">
-            MNG KARGO
+            {{ item.trademarkName }}
             <v-icon right class="green--text">mdi-check-circle</v-icon>
           </h3>
         </v-card-title>
 
         <v-card-subtitle class="pb-3">
-          Barış tunar <span class="pl-5">30 dakika önce</span>
+          {{ item.userFirstname }} {{ item.userLastname }}
+
+          <span class="pl-5">{{ item.createdAt }}</span>
         </v-card-subtitle>
 
         <v-card-text class="text--primary">
           <div>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est odit
-            officia cupiditate similique quam soluta, ullam aliquam harum
-            nostrum placeat nisi accusantium consequatur aperiam facere
-            voluptate quo ex debitis quidem!
+            {{ item.description }}
             <router-link class="pl-3" to="/complaints"
               >Devamını oku...</router-link
             >
@@ -47,7 +46,7 @@
 
     <!-- Filtering -->
 
-    <v-col cols="6" md="4" class="hidden-xs-only">
+    <v-col cols="4" class="hidden-xs-only">
       <v-card class="pa-5" dark>
         <v-form>
           <v-text-field
@@ -62,7 +61,6 @@
         >
         <v-card-text>
           <v-checkbox
-            v-model="ex4"
             label="Çözülen Şikayetler"
             color="red"
             value="red"
@@ -92,6 +90,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -102,6 +101,14 @@ export default {
         { title: "En çok yorum alan" },
       ],
     };
+  },
+  created() {
+    this.$store.dispatch("complaints/fetchComplaints");
+  },
+  computed: {
+    ...mapGetters({
+      complaints: "complaints/_getComplaints",
+    }),
   },
 };
 </script>

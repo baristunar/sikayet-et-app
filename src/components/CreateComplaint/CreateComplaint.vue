@@ -1,7 +1,7 @@
 <template>
   <v-row class="d-flex justify-center align-center">
     <v-col cols="6">
-      <v-card outlined>
+      <v-card outlined :loading="loadingStatus" :disabled="loadingStatus">
         <v-card-title>Şikayet Oluştur</v-card-title>
         <v-card-text>
           <v-form class="pa-5">
@@ -55,25 +55,31 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch("trademarks/getTrademarks");
+    this.$store.dispatch("trademarks/fetchTrademarks");
     this.activeUser = JSON.parse(localStorage.getItem("user"));
     console.log("activeUser => ", this.activeUser);
   },
   computed: {
     ...mapGetters({
       trademarks: "trademarks/_getTrademarks",
+      loadingStatus: "loading/getLoadingStatus",
     }),
   },
   methods: {
     createComplaint() {
+      const trademark = this.trademarks.filter(
+        (item) => item.id === this.selectedTrademark
+      );
       const complaintData = {
-        user: this.activeUser.id,
+        userFirstname: this.activeUser.firstname,
+        userLastname: this.activeUser.lastname,
+        userID: this.activeUser.id,
         header: this.complaintHeader,
         description: this.complaintDescription,
-        trademark: this.selectedTrademark,
+        trademarkID: this.selectedTrademark,
+        trademarkName: trademark[0].companyName,
         createdAt: new Date(),
       };
-      console.log(typeof this.activeUser);
 
       this.$store.dispatch("complaints/newComplaint", complaintData);
     },

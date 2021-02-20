@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "name": "Barış",
+      "firstname": "Barış",
       "lastname": "Tunar",
       "password": "1",
       "email": "baris@kodluyoruz.org",
@@ -10,6 +10,7 @@
       "city": null,
       "phone": null,
       "trIdNo": null,
+      "registerType": 1,
       "birthday": null,
       "adress": null,
       "id": 1,
@@ -130,64 +131,70 @@
   ],
   "complaints": [
     {
-      "header": "Migrosa alınmadım",
-      "description": "migrosa covid olmadığım halde alınmadım!",
-      "trademark": 2,
-      "createdAt": "2021-02-20T13:11:28.899Z",
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Migros test başlık",
+      "description": "Migros test açıklama",
+      "trademarkID": 2,
+      "trademarkName": "Migros",
+      "createdAt": "2021-02-20T16:33:04.352Z",
       "id": 1
     },
     {
-      "header": "test",
-      "description": "test mesajı",
-      "trademark": 3,
-      "createdAt": "2021-02-20T13:14:08.087Z",
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Turkcell Test Başlık",
+      "description": "Turkcell Test açıklama",
+      "trademarkID": 1,
+      "trademarkName": "Turkcell",
+      "createdAt": "2021-02-20T16:33:20.304Z",
       "id": 2
     },
     {
-      "header": "Migrosa alınmadım",
-      "description": "dsada",
-      "trademark": 2,
-      "createdAt": "2021-02-20T13:14:25.406Z",
+      "userFirstname": "Kaan",
+      "userLastname": "Karahan",
+      "userID": 2,
+      "header": "Resimsiz Test",
+      "description": "resimsiz test",
+      "trademarkID": 3,
+      "trademarkName": "Resimsiz Test",
+      "createdAt": "2021-02-20T16:34:12.222Z",
       "id": 3
     },
     {
-      "header": "Migrosa alınmadım",
-      "description": "sadasd",
-      "trademark": 1,
-      "createdAt": "2021-02-20T13:14:53.090Z",
+      "userFirstname": "Kaan",
+      "userLastname": "Karahan",
+      "userID": 2,
+      "header": "Turkcelll",
+      "description": "adad",
+      "trademarkID": 1,
+      "trademarkName": "Turkcell",
+      "createdAt": "2021-02-20T16:35:50.490Z",
       "id": 4
     },
     {
-      "user": 1,
-      "header": "test",
-      "description": "sada",
-      "trademark": 1,
-      "createdAt": "2021-02-20T13:17:27.263Z",
+      "userFirstname": "Kaan",
+      "userLastname": "Karahan",
+      "userID": 2,
+      "header": "LOADİNG TEST",
+      "description": "LOADASDAD",
+      "trademarkID": 1,
+      "trademarkName": "Turkcell",
+      "createdAt": "2021-02-20T16:36:47.372Z",
       "id": 5
     },
     {
-      "user": 2,
-      "header": "hattım çalışmıyor",
-      "description": "hattım durduk yere kapandı hiçbir işlem yapamıyorum ",
-      "trademark": 1,
-      "createdAt": "2021-02-20T13:19:15.472Z",
+      "userFirstname": "Kaan",
+      "userLastname": "Karahan",
+      "userID": 2,
+      "header": "LOADİNG TEST 2",
+      "description": "ADASDSAD",
+      "trademarkID": 2,
+      "trademarkName": "Migros",
+      "createdAt": "2021-02-20T16:37:07.947Z",
       "id": 6
-    },
-    {
-      "user": 2,
-      "header": "hattım çalışmıyor",
-      "description": "hattım durduk yere kapandı hiçbir işlem yapamıyorum ",
-      "trademark": 2,
-      "createdAt": "2021-02-20T13:19:32.101Z",
-      "id": 7
-    },
-    {
-      "user": 2,
-      "header": "hattım çalışmıyor",
-      "description": "hattım durduk yere kapandı hiçbir işlem yapamıyorum ",
-      "trademark": 3,
-      "createdAt": "2021-02-20T13:19:53.236Z",
-      "id": 8
     }
   ],
   "trademarks": [
@@ -200,7 +207,17 @@
       "phone": null,
       "adress": null,
       "id": 1,
-      "complaints": []
+      "complaints": [
+        {
+          "complaintID": 2
+        },
+        {
+          "complaintID": 4
+        },
+        {
+          "complaintID": 5
+        }
+      ]
     },
     {
       "companyName": "Migros",
@@ -211,7 +228,14 @@
       "phone": null,
       "adress": null,
       "id": 2,
-      "complaints": []
+      "complaints": [
+        {
+          "complaintID": 1
+        },
+        {
+          "complaintID": 6
+        }
+      ]
     },
     {
       "companyName": "Resimsiz Test",
@@ -222,7 +246,11 @@
       "phone": null,
       "adress": null,
       "id": 3,
-      "complaints": []
+      "complaints": [
+        {
+          "complaintID": 3
+        }
+      ]
     }
   ]
 }
