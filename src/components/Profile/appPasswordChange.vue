@@ -40,7 +40,12 @@
         <v-alert type="error" v-if="changePasswordStatus === false">
           {{ alertMessage }}
         </v-alert>
-        <v-btn class="success float-right" @click="changePassword"
+        <v-btn
+          class="success float-right"
+          @click="changePassword"
+          :disabled="
+            currentPassword === '' || newPassword === '' || newPassword2 === ''
+          "
           >Kaydet</v-btn
         >
       </v-form>
@@ -57,7 +62,6 @@ export default {
       currentPwShow: false,
       newPwShow: false,
       newPw2Show: false,
-
       currentPassword: "",
       newPassword: "",
       newPassword2: "",
@@ -70,6 +74,15 @@ export default {
   },
   methods: {
     changePassword() {
+      if (
+        this.currentPassword === "" ||
+        this.newPassword === "" ||
+        this.newPassword2 === " "
+      ) {
+        this.changePasswordStatus = false;
+        this.clearInputs();
+        return (this.alertMessage = "Lütfen Şifre Alanlarını Doldurunuz");
+      }
       if (this.activeUser.password !== this.currentPassword) {
         this.changePasswordStatus = false;
         return (this.alertMessage = "Girilen mevcut şifre hatalı!");

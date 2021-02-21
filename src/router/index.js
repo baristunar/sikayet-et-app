@@ -22,6 +22,11 @@ const routes = [
     component: () => import('../views/Complaints.vue'),
   },
   {
+    path: '/sikayetler/:id',
+    name: 'ComplaintDetail',
+    component: () => import('../views/ComplaintDetail.vue'),
+  },
+  {
     path: '/markalar',
     name: 'Trademarks',
     component: () => import('../views/Trademarks.vue'),
