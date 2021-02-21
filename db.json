@@ -3,7 +3,7 @@
     {
       "firstname": "Barış",
       "lastname": "Tunar",
-      "password": "1",
+      "password": "123",
       "email": "baris@kodluyoruz.org",
       "gender": "erkek",
       "userType": 0,
@@ -24,11 +24,11 @@
       "userType": 1,
       "registerType": 1,
       "city": null,
-      "trIdNo": null,
+      "trIdNo": 213123213,
       "birthday": null,
       "email": "kaan@example.com",
-      "phone": null,
-      "adress": null,
+      "phone": "55555555",
+      "adress": "ugur mumcu mah aksemseddin cad",
       "id": 2,
       "complaints": []
     },

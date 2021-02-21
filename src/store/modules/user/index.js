@@ -76,7 +76,6 @@ export default ({
             state.activeUser = null;
             localStorage.clear();
             router.push("/giris");
-
         }
     },
     actions: {
@@ -153,6 +152,14 @@ export default ({
 
 
         },
+        changePassword({ commit }, pUser) {
+            appAxios.patch(`/users/${pUser?.id}`, pUser).then(changePassword_response => {
+                console.log("change password resp => ", changePassword_response);
+                commit("setUser", changePassword_response?.data);
+
+            }).catch(e => console.log("chnge pw err => ", e));
+
+        }
     },
     getters: {
         _loginReject: state => state.loginReject,
