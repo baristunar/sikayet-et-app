@@ -30,14 +30,17 @@
         <v-card-text class="text--primary">
           <div>
             {{ item.description }}
-            <router-link class="pl-3" to="/complaints"
+            <router-link class="pl-3" :to="`/sikayetler/${item.id}`"
               >Devamını oku...</router-link
             >
           </div>
         </v-card-text>
 
         <v-card-actions>
-          <v-btn color="primary" text
+          <v-btn
+            color="primary"
+            text
+            @click="$router.push(`/sikayetler/${item.id}`)"
             >Yorum Yap <v-icon right>mdi-comment</v-icon></v-btn
           >
         </v-card-actions>

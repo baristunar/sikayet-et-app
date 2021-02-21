@@ -134,100 +134,89 @@
       "userFirstname": "Barış",
       "userLastname": "Tunar",
       "userID": 1,
-      "header": "Migros test başlık",
-      "description": "Migros test açıklama",
-      "trademarkID": 2,
-      "trademarkName": "Migros",
-      "createdAt": "2021-02-20T16:33:04.352Z",
+      "header": "TESTTT",
+      "description": "ŞASDASDSAD",
+      "trademarkID": 1,
+      "trademarkName": "Turkcell",
+      "createdAt": "2021-02-21T12:13:51.037Z",
+      "comments": [
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "test yorumudur",
+          "createdAt": "2021-02-21T12:21:47.102Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "test yorumu 2",
+          "createdAt": "2021-02-21T12:23:53.420Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "test yorumu 2",
+          "createdAt": "2021-02-21T12:24:13.927Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "test yorumu 3",
+          "createdAt": "2021-02-21T12:24:23.064Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "test yorumu 4",
+          "createdAt": "2021-02-21T12:24:26.126Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "test yorumu 5",
+          "createdAt": "2021-02-21T12:24:28.072Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "son test",
+          "createdAt": "2021-02-21T12:26:30.488Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "dasdsa",
+          "createdAt": "2021-02-21T12:45:21.608Z"
+        }
+      ],
+      "isSolved": false,
       "id": 1
     },
     {
-      "userFirstname": "Barış",
-      "userLastname": "Tunar",
-      "userID": 1,
-      "header": "Turkcell Test Başlık",
-      "description": "Turkcell Test açıklama",
-      "trademarkID": 1,
-      "trademarkName": "Turkcell",
-      "createdAt": "2021-02-20T16:33:20.304Z",
+      "userFirstname": "Kaan",
+      "userLastname": "Karahan",
+      "userID": 2,
+      "header": "Migros test",
+      "description": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, similique aut facere reprehenderit excepturi eum neque, explicabo quasi distinctio est, cupiditate iusto? Rerum, sint. Obcaecati cum ab eligendi rerum ipsam.\n      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, similique aut facere reprehenderit excepturi eum neque, explicabo quasi distinctio est, cupiditate iusto? Rerum, sint. Obcaecati cum ab eligendi rerum ipsam.\n",
+      "trademarkID": 2,
+      "trademarkName": "Migros",
+      "createdAt": "2021-02-21T13:30:18.119Z",
+      "comments": [],
+      "isSolved": false,
       "id": 2
     },
     {
       "userFirstname": "Kaan",
       "userLastname": "Karahan",
       "userID": 2,
-      "header": "Resimsiz Test",
-      "description": "resimsiz test",
-      "trademarkID": 3,
-      "trademarkName": "Resimsiz Test",
-      "createdAt": "2021-02-20T16:34:12.222Z",
+      "header": "lorem ",
+      "description": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, similique aut facere reprehenderit excepturi eum neque, explicabo quasi distinctio est, cupiditate iusto? Rerum, sint. Obcaecati cum ab eligendi rerum ipsam.\n      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, similique aut facere reprehenderit excepturi eum neque, explicabo quasi distinctio est, cupiditate iusto? Rerum, sint. Obcaecati cum ab eligendi rerum ipsam.\n      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, similique aut facere reprehenderit excepturi eum neque, explicabo quasi distinctio est, cupiditate iusto? Rerum, sint. Obcaecati cum ab eligendi rerum ipsam.\n",
+      "trademarkID": 2,
+      "trademarkName": "Migros",
+      "createdAt": "2021-02-21T13:30:44.939Z",
+      "comments": [],
+      "isSolved": false,
       "id": 3
-    },
-    {
-      "userFirstname": "Kaan",
-      "userLastname": "Karahan",
-      "userID": 2,
-      "header": "Turkcelll",
-      "description": "adad",
-      "trademarkID": 1,
-      "trademarkName": "Turkcell",
-      "createdAt": "2021-02-20T16:35:50.490Z",
-      "id": 4
-    },
-    {
-      "userFirstname": "Kaan",
-      "userLastname": "Karahan",
-      "userID": 2,
-      "header": "LOADİNG TEST",
-      "description": "LOADASDAD",
-      "trademarkID": 1,
-      "trademarkName": "Turkcell",
-      "createdAt": "2021-02-20T16:36:47.372Z",
-      "id": 5
-    },
-    {
-      "userFirstname": "Kaan",
-      "userLastname": "Karahan",
-      "userID": 2,
-      "header": "LOADİNG TEST 2",
-      "description": "ADASDSAD",
-      "trademarkID": 2,
-      "trademarkName": "Migros",
-      "createdAt": "2021-02-20T16:37:07.947Z",
-      "id": 6
-    },
-    {
-      "userFirstname": "Barış",
-      "userLastname": "Tunar",
-      "userID": 1,
-      "header": "uzun mesaj test",
-      "description": "      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n",
-      "trademarkID": 1,
-      "trademarkName": "Turkcell",
-      "createdAt": "2021-02-21T10:41:45.855Z",
-      "id": 7
-    },
-    {
-      "userFirstname": "Barış",
-      "userLastname": "Tunar",
-      "userID": 1,
-      "header": "test 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.",
-      "trademarkID": 2,
-      "trademarkName": "Migros",
-      "createdAt": "2021-02-21T10:42:56.545Z",
-      "id": 8
-    },
-    {
-      "userFirstname": "Barış",
-      "userLastname": "Tunar",
-      "userID": 1,
-      "header": "test 3",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.",
-      "trademarkID": 3,
-      "trademarkName": "Resimsiz Test",
-      "createdAt": "2021-02-21T10:43:35.903Z",
-      "id": 9
     }
   ],
   "trademarks": [
@@ -252,6 +241,9 @@
         },
         {
           "complaintID": 7
+        },
+        {
+          "complaintID": 1
         }
       ]
     },
@@ -273,6 +265,12 @@
         },
         {
           "complaintID": 8
+        },
+        {
+          "complaintID": 2
+        },
+        {
+          "complaintID": 3
         }
       ],
       "solvedComplaints": []

@@ -84,6 +84,8 @@ export default {
         trademarkID: this.selectedTrademark,
         trademarkName: trademark[0].companyName,
         createdAt: new Date(),
+        comments: [],
+        isSolved: false,
       };
 
       this.$store.dispatch("complaints/newComplaint", complaintData);
