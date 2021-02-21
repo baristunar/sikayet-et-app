@@ -47,7 +47,7 @@ export default {
             commit("updateTrademarkData", data.id);
             console.log("2 saniye sonra calıstı");
             dispatch(`updateTrademark`, data.trademarkID);
-            router.push("/");
+            router.push("/sikayetler");
             commit("loading/setLoadingStatus", false);
           }, 2000);
 

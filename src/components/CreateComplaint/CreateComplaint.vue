@@ -1,7 +1,12 @@
 <template>
   <v-row class="d-flex justify-center align-center">
     <v-col cols="6">
-      <v-card outlined :loading="loadingStatus" :disabled="loadingStatus">
+      <v-card
+        outlined
+        :loading="loadingStatus"
+        :disabled="loadingStatus"
+        class="pa-5"
+      >
         <v-card-title>Şikayet Oluştur</v-card-title>
         <v-card-text>
           <v-form class="pa-5">
@@ -87,5 +92,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

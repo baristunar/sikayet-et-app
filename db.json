@@ -8,11 +8,11 @@
       "gender": "erkek",
       "userType": 0,
       "city": null,
-      "phone": null,
-      "trIdNo": null,
+      "phone": 543212212,
+      "trIdNo": "111111111",
       "registerType": 1,
-      "birthday": null,
-      "adress": null,
+      "birthday": "08 / 12 / 1992",
+      "adress": "ugur mumcu istanbul",
       "id": 1,
       "complaints": []
     },
@@ -195,6 +195,39 @@
       "trademarkName": "Migros",
       "createdAt": "2021-02-20T16:37:07.947Z",
       "id": 6
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "uzun mesaj test",
+      "description": "      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.\n",
+      "trademarkID": 1,
+      "trademarkName": "Turkcell",
+      "createdAt": "2021-02-21T10:41:45.855Z",
+      "id": 7
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "test 2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.",
+      "trademarkID": 2,
+      "trademarkName": "Migros",
+      "createdAt": "2021-02-21T10:42:56.545Z",
+      "id": 8
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "test 3",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore placeat sint deserunt, numquam repellendus. Illum quisquam corporis neque et mollitia accusantium. Itaque harum aspernatur sit eligendi delectus asperiores velit.",
+      "trademarkID": 3,
+      "trademarkName": "Resimsiz Test",
+      "createdAt": "2021-02-21T10:43:35.903Z",
+      "id": 9
     }
   ],
   "trademarks": [
@@ -216,6 +249,9 @@
         },
         {
           "complaintID": 5
+        },
+        {
+          "complaintID": 7
         }
       ]
     },
@@ -234,8 +270,12 @@
         },
         {
           "complaintID": 6
+        },
+        {
+          "complaintID": 8
         }
-      ]
+      ],
+      "solvedComplaints": []
     },
     {
       "companyName": "Resimsiz Test",
@@ -249,8 +289,12 @@
       "complaints": [
         {
           "complaintID": 3
+        },
+        {
+          "complaintID": 9
         }
-      ]
+      ],
+      "solvedComplaints": []
     }
   ]
 }

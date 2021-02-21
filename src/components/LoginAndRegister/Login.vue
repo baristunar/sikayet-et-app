@@ -40,7 +40,7 @@
 
             <v-alert
               v-if="alert"
-              color="warning darken-5"
+              type="error"
               dark
               dense
               icon="mdi-alert"
@@ -89,5 +89,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
