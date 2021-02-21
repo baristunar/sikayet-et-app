@@ -5,7 +5,7 @@
       <!--       <pre>{{ getTrademarks }}</pre> -->
       <v-card
         class="d-flex pa-5 justify-space-around mt-5"
-        color="blue-grey lighten-5"
+        color="blue-grey darken-3"
         v-for="item in trademarks"
         :key="item.id"
       >
@@ -21,16 +21,20 @@
           </v-card-actions>
         </v-card>
 
-        <v-card-text class="font-weight-bold d-flex flex-column align-center"
+        <v-card-text
+          class="font-weight-bold d-flex flex-column align-center white--text"
           ><p>{{ item.companyName }}</p>
 
+       
           <p>
             <v-rating
-              v-model="rating"
-              color="yellow darken-3"
-              background-color="white darken-1"
-              empty-icon="$ratingFull"
-              half-increments
+              v-model="item.rating"
+              background-color="warning lighten-1"
+              color="warning"
+              :empty-icon="$mdiStarOutline"
+              :full-icon="$mdiStar"
+              :half-icon="$mdi - star - half"
+              length="5"
               readonly
             ></v-rating>
           </p>
@@ -60,16 +64,68 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      rating: 5,
+      empty_icon: "$ratingEmpty",
+      half_icon: "fas fa-star-half",
+      full_icon: "fas fa-star",
     };
   },
-  created() {
+  mounted() {
     this.$store.dispatch("trademarks/fetchTrademarks");
+    console.log("this.trademark", this.trademarks);
+
+    setTimeout(() => {
+      this.trademarks.forEach((item) => {
+        item.rating = this.changeRating(item.solvedComplaints, item.complaints);
+      });
+    }, 200);
+
+    setTimeout(() => {
+      console.log("adlasdlas", this.trademarks);
+    }, 5000);
   },
   computed: {
     ...mapGetters({
       trademarks: "trademarks/_getTrademarks",
     }),
+  },
+  methods: {
+    changeRating(solvedComplaints, complaints) {
+      let rate = (solvedComplaints?.length / complaints?.length) * 100;
+      console.log("rate", rate);
+      if (rate > 90 && rate <= 100) {
+        return 5;
+      }
+      if (rate > 80 && rate <= 90) {
+        return 4.5;
+      }
+      if (rate > 70 && rate <= 80) {
+        return 4;
+      }
+      if (rate > 60 && rate <= 70) {
+        return 3.5;
+      }
+      if (rate > 50 && rate <= 60) {
+        return 3;
+      }
+      if (rate > 40 && rate <= 50) {
+        return 2.5;
+      }
+      if (rate > 30 && rate <= 40) {
+        return 2;
+      }
+      if (rate > 20 && rate <= 30) {
+        return 1.5;
+      }
+      if (rate > 10 && rate <= 20) {
+        return 1;
+      }
+      if (rate > 0 && rate <= 10) {
+        return 0.5;
+      }
+      if (solvedComplaints?.length === 0 && complaints?.length === 0) {
+        return 5;
+      } else return 0;
+    },
   },
 };
 </script>
