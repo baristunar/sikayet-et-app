@@ -74,6 +74,16 @@ export default {
           commit("setTrademarkData", fetchTrademarkdata_response.data);
         });
     },
+    updateSupports({ dispatch }, pComplaintData) {
+      appAxios.patch(`/complaints/${pComplaintData?.id}`, pComplaintData).then(updateSupports_response => {
+        console.log("update supports resp =>", updateSupports_response);
+        dispatch("fetchComplaints");
+
+      }).catch(e => {
+        console.log(e);
+      })
+
+    },
     updateTrademark({ state }, payloadID) {
       appAxios
         .patch(`trademarks/${payloadID}`, state.trademarkData)

@@ -86,6 +86,7 @@ export default {
         createdAt: new Date(),
         comments: [],
         isSolved: false,
+        supports: [],
       };
 
       this.$store.dispatch("complaints/newComplaint", complaintData);

@@ -41,7 +41,39 @@
             color="primary"
             text
             @click="$router.push(`/sikayetler/${item.id}`)"
-            >Yorum Yap <v-icon right>mdi-comment</v-icon></v-btn
+          >
+            <v-icon left>mdi-comment</v-icon> Yorum Yap
+          </v-btn>
+
+          <v-btn
+            :class="{
+              'success--text': item.supports.some(
+                (element) => element.userID === activeUser.id
+              ),
+            }"
+            class="primary--text"
+            text
+            @click="supportComplaint(item)"
+          >
+            {{
+              item.supports.some((element) => element.userID === activeUser.id)
+                ? "Destekledin"
+                : "Destekle"
+            }}
+            <v-icon left>mdi-thumb-up</v-icon>
+          </v-btn>
+          <v-card-text
+            class="info--text font-weight-bold"
+            v-if="item.supports.length > 0"
+            >{{ item.supports.length }} Destekçi</v-card-text
+          >
+          <v-btn
+            v-if="item.comments.length > 0"
+            text
+            color="info"
+            @click="$router.push(`/sikayetler/${item.id}`)"
+          >
+            {{ item.comments.length }} Yorum</v-btn
           >
         </v-card-actions>
       </v-card>
@@ -49,8 +81,12 @@
 
     <!-- Filtering -->
 
-    <v-col cols="4" class="hidden-xs-only">
-      <v-card class="pa-5" dark>
+    <v-col
+      cols="4"
+      class="filter-fixed hidden-xs-only"
+      style="position: relative"
+    >
+      <v-card class="pa-5 filter-fixed" dark>
         <v-form>
           <v-text-field
             filled
@@ -97,6 +133,8 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      activeUser: JSON.parse(localStorage.getItem("user")),
+      supportMessage: "Destekle",
       items: [
         { title: "En yeni" },
         { title: "En çok görüntülenen" },
@@ -108,6 +146,25 @@ export default {
   created() {
     this.$store.dispatch("complaints/fetchComplaints");
   },
+  methods: {
+    supportComplaint(item) {
+      let data = item;
+      console.log("data", data);
+      const isExist = data?.supports.some(
+        (item) => item?.userID === this.activeUser?.id
+      );
+
+      if (isExist) {
+        data.supports = data?.supports.filter(
+          (item) => item?.userID !== this.activeUser?.id
+        );
+        this.$store.dispatch("complaints/updateSupports", data);
+      } else {
+        data?.supports.push({ userID: this.activeUser.id });
+        this.$store.dispatch("complaints/updateSupports", data);
+      }
+    },
+  },
   computed: {
     ...mapGetters({
       complaints: "complaints/_getComplaints",
@@ -117,4 +174,11 @@ export default {
 </script>
 
 <style>
+.filter-fixed {
+  position: fixed;
+  right: 20;
+  top: 20;
+  min-width: 600px;
+  overflow: hidden;
+}
 </style>

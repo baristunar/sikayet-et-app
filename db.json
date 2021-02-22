@@ -139,9 +139,24 @@
       "trademarkID": 1,
       "trademarkName": "Migros",
       "createdAt": "2021-02-21T14:18:15.531Z",
-      "comments": [],
+      "comments": [
+        {
+          "userID": 2,
+          "username": "Kaan Karahan",
+          "comment": "bu bir yorum",
+          "createdAt": "2021-02-22T10:29:17.230Z"
+        }
+      ],
       "isSolved": false,
-      "id": 1
+      "id": 1,
+      "supports": [
+        {
+          "userID": 3
+        },
+        {
+          "userID": 2
+        }
+      ]
     },
     {
       "userFirstname": "Kaan",
@@ -154,7 +169,15 @@
       "createdAt": "2021-02-21T14:18:54.143Z",
       "comments": [],
       "isSolved": false,
-      "id": 2
+      "id": 2,
+      "supports": [
+        {
+          "userID": 3
+        },
+        {
+          "userID": 2
+        }
+      ]
     },
     {
       "userFirstname": "Kaan",
@@ -167,7 +190,12 @@
       "createdAt": "2021-02-21T14:19:03.211Z",
       "comments": [],
       "isSolved": false,
-      "id": 3
+      "id": 3,
+      "supports": [
+        {
+          "userID": 2
+        }
+      ]
     },
     {
       "userFirstname": "Kaan",
@@ -180,7 +208,8 @@
       "createdAt": "2021-02-21T14:19:12.497Z",
       "comments": [],
       "isSolved": false,
-      "id": 4
+      "id": 4,
+      "supports": []
     },
     {
       "userFirstname": "Kaan",
@@ -193,7 +222,8 @@
       "createdAt": "2021-02-21T15:47:52.422Z",
       "comments": [],
       "isSolved": false,
-      "id": 5
+      "id": 5,
+      "supports": []
     },
     {
       "userFirstname": "Kaan",
@@ -206,7 +236,8 @@
       "createdAt": "2021-02-21T15:48:06.417Z",
       "comments": [],
       "isSolved": false,
-      "id": 6
+      "id": 6,
+      "supports": []
     },
     {
       "userFirstname": "Kaan",
@@ -219,7 +250,8 @@
       "createdAt": "2021-02-21T15:48:37.927Z",
       "comments": [],
       "isSolved": false,
-      "id": 7
+      "id": 7,
+      "supports": []
     },
     {
       "userFirstname": "Kaan",
@@ -232,7 +264,8 @@
       "createdAt": "2021-02-21T15:48:49.866Z",
       "comments": [],
       "isSolved": false,
-      "id": 8
+      "id": 8,
+      "supports": []
     },
     {
       "userFirstname": "Kaan",
@@ -245,7 +278,33 @@
       "createdAt": "2021-02-21T15:48:56.228Z",
       "comments": [],
       "isSolved": false,
-      "id": 9
+      "id": 9,
+      "supports": [
+        {
+          "userID": 1
+        }
+      ]
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Migros test 1",
+      "description": "lsadsaldsaldsaşd",
+      "trademarkID": 1,
+      "trademarkName": "Migros",
+      "createdAt": "2021-02-22T10:28:11.659Z",
+      "comments": [],
+      "isSolved": false,
+      "supports": [
+        {
+          "userID": 1
+        },
+        {
+          "userID": 2
+        }
+      ],
+      "id": 10
     }
   ],
   "trademarks": [
@@ -285,6 +344,9 @@
         },
         {
           "complaintID": 9
+        },
+        {
+          "complaintID": 10
         }
       ],
       "rating": null,

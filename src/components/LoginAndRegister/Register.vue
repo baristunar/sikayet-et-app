@@ -127,7 +127,7 @@ export default {
         city: null,
         trIdNo: null,
         birthday: null,
-        complaints: [],
+        complaints: []
       };
 
       const corporateData = {
@@ -139,7 +139,6 @@ export default {
         solvedComplaints: [],
         complaints: [],
         rating: 5,
-        
       };
 
       const commonData = {
