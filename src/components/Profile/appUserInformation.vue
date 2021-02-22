@@ -47,7 +47,12 @@
         v-model="activeUser.birthday"
       ></v-text-field>
 
-      <v-btn class="info float-right mr-3"> Düzenle</v-btn>
+      <v-btn
+        class="info float-right mr-3"
+        @click="$router.push(`/profil/${activeUser.id}`)"
+      >
+        Düzenle</v-btn
+      >
     </v-col>
   </v-row>
 </template>

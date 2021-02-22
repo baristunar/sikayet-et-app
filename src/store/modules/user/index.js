@@ -147,10 +147,13 @@ export default ({
                     }
                 })
             }
+        },
+        updateProfile({ commit }, pUserData) {
+            appAxios.patch(`/users/${pUserData?.id}`, pUserData).then(upateProfile_response => {
+                console.log("upateProfile_response   => ", upateProfile_response);
+                commit("setUser", upateProfile_response?.data);
 
-
-
-
+            }).catch(e => console.log("upateProfile_response err => ", e));
         },
         changePassword({ commit }, pUser) {
             appAxios.patch(`/users/${pUser?.id}`, pUser).then(changePassword_response => {
