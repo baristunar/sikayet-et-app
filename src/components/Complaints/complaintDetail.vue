@@ -29,7 +29,9 @@
         >
           {{ item.userFirstname }} {{ item.userLastname }}
 
-          <span class="pl-5">{{ item.createdAt }}</span>
+          <span class="pl-5">{{
+            `${timesAgo(item.createdAt)} oluşturuldu.`
+          }}</span>
         </v-card-subtitle>
 
         <v-card-text class="white--text">
@@ -44,7 +46,7 @@
       <v-card
         class="mb-5 pa-5"
         v-for="item in allComments"
-        :key="item.userID"
+        :key="item.createdAt"
         outlined
         shaped
         :elevation="10"
@@ -55,7 +57,9 @@
         <v-card-title class="mb-3 d-flex justify-space-between">
           <h3 class="pl-4">{{ item.username }}</h3>
           <v-card-subtitle class="pb-3">
-            <span class="pl-5">{{ item.createdAt }}</span>
+            <span class="pl-5">{{
+              `${timesAgo(item.createdAt)} oluşturuldu.`
+            }}</span>
           </v-card-subtitle>
         </v-card-title>
 
@@ -90,8 +94,10 @@
 </template>
 
 <script>
+import helperMixin from "@/utils/helperMixin";
 import { appAxios } from "@/utils/securedAxios";
 export default {
+  mixins: [helperMixin],
   data() {
     return {
       comment: "",
@@ -125,7 +131,7 @@ export default {
         createdAt: new Date(),
       };
       this.complaintDetail.forEach((item) =>
-        item.comments.push({ ...commentData })
+        item.comments?.push({ ...commentData })
       );
 
       appAxios
@@ -139,7 +145,8 @@ export default {
   computed: {
     allComments() {
       let comments = [];
-      comments = this.complaintDetail[0].comments;
+      comments = this.complaintDetail[0]?.comments || [];
+      console.log("comments", comments);
       return comments;
     },
   },

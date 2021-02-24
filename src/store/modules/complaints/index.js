@@ -17,6 +17,7 @@ export default {
     },
     setComplaints(state, pComplaints) {
       state.complaints = pComplaints;
+
     },
     setTrademark(state, payload) {
       state.trademark = payload;
@@ -56,7 +57,7 @@ export default {
     },
     fetchComplaints({ commit }) {
       appAxios
-        .get("/complaints")
+        .get("/complaints?_sort=createdAt&_order=desc")
         .then((getComplaint_response) => {
           console.log("get comp resp => ", getComplaint_response.data);
           commit("setComplaints", getComplaint_response.data);

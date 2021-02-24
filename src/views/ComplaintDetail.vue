@@ -1,16 +1,16 @@
 <template>
   <div>
     <v-container class="mx-auto pa-15 my-auto">
-      <write-comment />
+      <complaint-detail />
     </v-container>
   </div>
 </template>
 
 <script>
-import writeComment from "@/components/Complaints/writeComment";
+import complaintDetail from "@/components/Complaints/complaintDetail";
 export default {
   components: {
-    writeComment,
+    complaintDetail,
   },
 };
 </script>

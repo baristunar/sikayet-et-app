@@ -2,9 +2,12 @@
   <v-row class="justify-space-around">
     <!-- Cards -->
     <v-col cols="6">
+      <h2 v-if="filteredList.length === 0">
+        Aramınıza uygun sonuç bulunamamıştır.
+      </h2>
       <v-card
         class="mb-5 pa-5"
-        v-for="item in complaints"
+        v-for="item in filteredList"
         :key="item.id"
         outlined
         shaped
@@ -24,7 +27,9 @@
         <v-card-subtitle class="pb-3">
           {{ item.userFirstname }} {{ item.userLastname }}
 
-          <span class="pl-5">{{ item.createdAt }}</span>
+          <span class="pl-5">{{
+            `${timesAgo(item.createdAt)} oluşturuldu.`
+          }}</span>
         </v-card-subtitle>
 
         <v-card-text class="text--primary">
@@ -46,6 +51,7 @@
           </v-btn>
 
           <v-btn
+            v-if="item.userID !== activeUser.id"
             :class="{
               'success--text': item.supports.some(
                 (element) => element.userID === activeUser.id
@@ -89,6 +95,7 @@
       <v-card class="pa-5 filter-fixed" dark>
         <v-form>
           <v-text-field
+            v-model="search"
             filled
             dense
             rounded
@@ -129,8 +136,11 @@
 </template>
 
 <script>
+import helperMixin from "@/utils/helperMixin";
 import { mapGetters } from "vuex";
 export default {
+  mixins: [helperMixin],
+
   data() {
     return {
       activeUser: JSON.parse(localStorage.getItem("user")),
@@ -141,6 +151,7 @@ export default {
         { title: "En çok destek alan" },
         { title: "En çok yorum alan" },
       ],
+      search: "",
     };
   },
   created() {
@@ -169,6 +180,32 @@ export default {
     ...mapGetters({
       complaints: "complaints/_getComplaints",
     }),
+    filteredList() {
+      if (this.search.length > 0) {
+        console.log(
+          this.complaints.filter(
+            (item) =>
+              item?.description
+                .toLowerCase()
+                .includes(this.search.toLowerCase()) ||
+              item?.trademarkName.includes(this.search.toLowerCase()) ||
+              item?.header.includes(this.search.toLowerCase())
+          )
+        );
+        return this.complaints.filter(
+          (item) =>
+            item?.description
+              .toLowerCase()
+              .includes(this.search.toLowerCase()) ||
+            item?.trademarkName
+              .toLowerCase()
+              .includes(this.search.toLowerCase()) ||
+            item?.header.toLowerCase().includes(this.search.toLowerCase())
+        );
+      } else {
+        return this.complaints;
+      }
+    },
   },
 };
 </script>

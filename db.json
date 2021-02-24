@@ -23,7 +23,7 @@
       "password": "1",
       "userType": 1,
       "registerType": 1,
-      "city": null,
+      "city": "Ağrı",
       "trIdNo": 213123213,
       "birthday": null,
       "email": "kaan@example.com",
@@ -145,6 +145,12 @@
           "username": "Kaan Karahan",
           "comment": "bu bir yorum",
           "createdAt": "2021-02-22T10:29:17.230Z"
+        },
+        {
+          "userID": 2,
+          "username": "Kaan Karahan",
+          "comment": "test",
+          "createdAt": "2021-02-24T09:40:35.313Z"
         }
       ],
       "isSolved": false,
@@ -305,6 +311,51 @@
         }
       ],
       "id": 10
+    },
+    {
+      "userFirstname": "Kaan",
+      "userLastname": "Karahan",
+      "userID": 2,
+      "header": "test",
+      "description": "test",
+      "trademarkID": 2,
+      "trademarkName": "Turkcell",
+      "createdAt": "2021-02-24T08:41:06.366Z",
+      "comments": [],
+      "isSolved": false,
+      "supports": [
+        {
+          "userID": 2
+        }
+      ],
+      "id": 11
+    },
+    {
+      "userFirstname": "Kaan",
+      "userLastname": "Karahan",
+      "userID": 2,
+      "header": "Migros çalışanları çok ilgisiz",
+      "description": "lorem",
+      "trademarkID": 1,
+      "trademarkName": "Migros",
+      "createdAt": "2021-02-24T08:55:39.974Z",
+      "comments": [
+        {
+          "userID": 2,
+          "username": "Kaan Karahan",
+          "comment": "Test",
+          "createdAt": "2021-02-24T09:05:41.539Z"
+        },
+        {
+          "userID": 2,
+          "username": "Kaan Karahan",
+          "comment": "dfsfdsf",
+          "createdAt": "2021-02-24T09:08:03.430Z"
+        }
+      ],
+      "isSolved": false,
+      "supports": [],
+      "id": 12
     }
   ],
   "trademarks": [
@@ -347,6 +398,9 @@
         },
         {
           "complaintID": 10
+        },
+        {
+          "complaintID": 12
         }
       ],
       "rating": null,
@@ -364,6 +418,9 @@
       "complaints": [
         {
           "complaintID": 5
+        },
+        {
+          "complaintID": 11
         }
       ],
       "rating": null,
