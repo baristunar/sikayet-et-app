@@ -49,12 +49,7 @@ const routes = [
     path: '/sikayetyaz',
     name: 'CreateComplaint',
     component: () => import('../views/CreateComplaint.vue'),
-  },
-  {
-    path: '/admin',
-    name: 'AdminPanel',
-    component: () => import('../views/AdminPanel.vue'),
-  },
+  }
 
 ]
 
@@ -96,11 +91,6 @@ router.beforeEach((to, from, next) => {
   }
 
   if ((isAuthenticated) && (to.name === "Login" || to.name === "Register")) {
-    next("/");
-  }
-
-
-  if (user?.userType !== 1 && to.name === "AdminPanel") {
     next("/");
   }
 

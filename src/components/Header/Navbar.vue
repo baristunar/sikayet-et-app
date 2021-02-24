@@ -128,11 +128,6 @@ export default {
           route: "/profil",
         },
         {
-          icon: "mdi-view-dashboard",
-          text: "Admin Panel",
-          route: "/admin",
-        },
-        {
           icon: "mdi-comment-text-multiple",
           text: "Şikayetler",
           route: "/sikayetler",

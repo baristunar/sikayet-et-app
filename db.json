@@ -153,7 +153,7 @@
           "createdAt": "2021-02-24T09:40:35.313Z"
         }
       ],
-      "isSolved": false,
+      "isSolved": true,
       "id": 1,
       "supports": [
         {
@@ -322,7 +322,7 @@
       "trademarkName": "Turkcell",
       "createdAt": "2021-02-24T08:41:06.366Z",
       "comments": [],
-      "isSolved": false,
+      "isSolved": true,
       "supports": [
         {
           "userID": 2
@@ -353,7 +353,7 @@
           "createdAt": "2021-02-24T09:08:03.430Z"
         }
       ],
-      "isSolved": false,
+      "isSolved": true,
       "supports": [],
       "id": 12
     }

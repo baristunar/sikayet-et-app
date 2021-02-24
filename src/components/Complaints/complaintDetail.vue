@@ -4,7 +4,8 @@
       <!-- Main Complaint -->
       <v-card
         class="mb-5 pa-5 white--text"
-        color="error lighten-1"
+        :class="{ success: item.isSolved }"
+        color="info lighten-1"
         v-for="item in complaintDetail"
         :key="item.id"
         outlined
@@ -18,11 +19,14 @@
           <h3 class="pl-4 white--text">{{ item.header }}</h3>
           <h3 class="pl-4 ml-auto white--text">
             {{ item.trademarkName }}
-            <v-icon right class="success--text darken-1"
-              >mdi-check-circle</v-icon
-            >
           </h3>
         </v-card-title>
+        <v-card-subtitle v-if="item.isSolved">
+          <h3 class="white--text">
+            Çözüldü
+            <v-icon right class="white--text darken-1">mdi-check-circle</v-icon>
+          </h3>
+        </v-card-subtitle>
 
         <v-card-subtitle
           class="pb-3 d-flex justify-space-between white--text font-weight-bold"
@@ -39,7 +43,45 @@
             {{ item.description }}
           </div>
         </v-card-text>
+        <v-card-actions class="white--text">
+          <v-btn
+            v-if="item.userID === activeUser.id && !item.isSolved"
+            class="success"
+            :class="{ success: item.isSolved }"
+            @click="openDialog(item)"
+            >Çözüldü</v-btn
+          >
+        </v-card-actions>
       </v-card>
+
+      <!-- Dialog -->
+
+      <v-dialog v-model="dialog" max-width="290">
+        <v-card>
+          <v-card-title class="headline"> Sorununuz çözüldü mü? </v-card-title>
+
+          <v-card-text>
+            Şikayet durumunuzu çözüldü olarak değiştirmek istediğinizden emin
+            misiniz?
+          </v-card-text>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn color="green darken-1" text @click="changeToSolved">
+              Evet
+            </v-btn>
+
+            <v-btn
+              color="green darken-1"
+              text
+              @click="(dialog = false), (updateData = Object)"
+            >
+              Hayır
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
 
       <!-- ALL COMMENTS -->
 
@@ -100,6 +142,8 @@ export default {
   mixins: [helperMixin],
   data() {
     return {
+      dialog: false,
+      updateData: Object,
       comment: "",
       complaintDetail: [],
       activeUser: JSON.parse(localStorage.getItem("user")),
@@ -140,6 +184,18 @@ export default {
           console.log(newComment_response.data);
           this.comment = "";
         });
+    },
+    openDialog(item) {
+      this.dialog = true;
+      this.updateData = item;
+    },
+    changeToSolved() {
+      if (!this.updateData.isSolved) {
+        this.updateData.isSolved = true;
+        this.$store.dispatch("complaints/updateComplaints", this.updateData);
+        this.updateData = Object;
+        this.dialog = false;
+      }
     },
   },
   computed: {

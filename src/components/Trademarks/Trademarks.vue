@@ -25,18 +25,16 @@
           class="font-weight-bold d-flex flex-column align-center white--text"
           ><p>{{ item.companyName }}</p>
 
-       
           <p>
             <v-rating
-              v-model="item.rating"
-              background-color="warning lighten-1"
+              background-color="grey"
               color="warning"
-              :empty-icon="$mdiStarOutline"
-              :full-icon="$mdiStar"
-              :half-icon="$mdi - star - half"
               length="5"
               readonly
-            ></v-rating>
+              v-model="item.rating"
+              size="24"
+            >
+            </v-rating>
           </p>
         </v-card-text>
 
@@ -63,11 +61,7 @@
 import { mapGetters } from "vuex";
 export default {
   data() {
-    return {
-      empty_icon: "$ratingEmpty",
-      half_icon: "fas fa-star-half",
-      full_icon: "fas fa-star",
-    };
+    return {};
   },
   mounted() {
     this.$store.dispatch("trademarks/fetchTrademarks");

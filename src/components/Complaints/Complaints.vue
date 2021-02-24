@@ -20,7 +20,9 @@
           <h3 class="pl-4">{{ item.header }}</h3>
           <h3 class="pl-4 ml-auto">
             {{ item.trademarkName }}
-            <v-icon right class="green--text">mdi-check-circle</v-icon>
+            <v-icon v-if="item.isSolved" right class="green--text"
+              >mdi-check-circle</v-icon
+            >
           </h3>
         </v-card-title>
 
@@ -107,9 +109,10 @@
         >
         <v-card-text>
           <v-checkbox
+            v-model="solvedFilter"
             label="Çözülen Şikayetler"
             color="red"
-            value="red"
+            :value="solvedFilter"
             hide-details
           ></v-checkbox>
         </v-card-text>
@@ -122,9 +125,11 @@
               </v-btn>
             </template>
             <v-list>
-              <v-list-item v-for="(item, index) in items" :key="index">
+              <v-list-item v-for="item in filterTitles" :key="item.id">
                 <v-list-item-title
-                  ><v-btn text>{{ item.title }}</v-btn></v-list-item-title
+                  ><v-btn @click="filterItems(item.id)" text>{{
+                    item.title
+                  }}</v-btn></v-list-item-title
                 >
               </v-list-item>
             </v-list>
@@ -145,13 +150,14 @@ export default {
     return {
       activeUser: JSON.parse(localStorage.getItem("user")),
       supportMessage: "Destekle",
-      items: [
-        { title: "En yeni" },
-        { title: "En çok görüntülenen" },
-        { title: "En çok destek alan" },
-        { title: "En çok yorum alan" },
+      filterTitles: [
+        { id: 1, title: "En yeni" },
+        { id: 2, title: "En çok görüntülenen" },
+        { id: 3, title: "En çok destek alan" },
+        { id: 4, title: "En çok yorum alan" },
       ],
       search: "",
+      solvedFilter: false,
     };
   },
   created() {
@@ -169,10 +175,16 @@ export default {
         data.supports = data?.supports.filter(
           (item) => item?.userID !== this.activeUser?.id
         );
-        this.$store.dispatch("complaints/updateSupports", data);
+        this.$store.dispatch("complaints/updateComplaints", data);
       } else {
         data?.supports.push({ userID: this.activeUser.id });
-        this.$store.dispatch("complaints/updateSupports", data);
+        this.$store.dispatch("complaints/updateComplaints", data);
+      }
+    },
+    filterItems(id) {
+      if (id === 4) {
+        console.log("calıstı");
+        return this.complaints.filter((item) => item.comments.sort());
       }
     },
   },
@@ -182,16 +194,6 @@ export default {
     }),
     filteredList() {
       if (this.search.length > 0) {
-        console.log(
-          this.complaints.filter(
-            (item) =>
-              item?.description
-                .toLowerCase()
-                .includes(this.search.toLowerCase()) ||
-              item?.trademarkName.includes(this.search.toLowerCase()) ||
-              item?.header.includes(this.search.toLowerCase())
-          )
-        );
         return this.complaints.filter(
           (item) =>
             item?.description
@@ -202,6 +204,9 @@ export default {
               .includes(this.search.toLowerCase()) ||
             item?.header.toLowerCase().includes(this.search.toLowerCase())
         );
+      }
+      if (this.solvedFilter) {
+        return this.complaints.filter((item) => item.isSolved === true);
       } else {
         return this.complaints;
       }
