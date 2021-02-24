@@ -69,7 +69,7 @@
 
       <v-list class="mt-5">
         <v-list-item
-          v-for="link in links"
+          v-for="link in sidebarLinks"
           :key="link.text"
           router
           :to="link.route"
@@ -112,6 +112,7 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      activeUser: JSON.parse(localStorage.getItem("user")),
       drawer: false,
       search: "",
       user: {
@@ -120,32 +121,12 @@ export default {
         avatar:
           "https://media-exp1.licdn.com/dms/image/C4D03AQHJRFczLj7dwg/profile-displayphoto-shrink_100_100/0/1612359477757?e=1618444800&v=beta&t=Cq11sTJLIeKU13b0nLo3RIvWq8VYQEWRK7r3SJUMedU",
       },
-      links: [
-        { icon: "mdi-home", text: "Anasayfa", route: "/" },
-        {
-          icon: "mdi-account-edit",
-          text: "Profil",
-          route: "/profil",
-        },
-        {
-          icon: "mdi-comment-text-multiple",
-          text: "Şikayetler",
-          route: "/sikayetler",
-        },
-        {
-          icon: "mdi-domain",
-          text: "Markalar",
-          route: "/markalar",
-        },
-        {
-          icon: "mdi-lead-pencil",
-          text: "Şikayet Yaz",
-          route: "/sikayetyaz",
-        },
-      ],
+      sidebarLinks: [],
     };
   },
-
+  mounted() {
+    this.setLinks();
+  },
   computed: {
     ...mapGetters({
       isAuthenticated: "user/_isAuthenticated",
@@ -155,8 +136,51 @@ export default {
   methods: {
     logout() {
       this.$store.commit("user/logout");
+      this.setLinks();
     },
-  },
+    setLinks() {
+      if (this.activeUser?.registerType === 1) {
+        return (this.sidebarLinks = [
+          { icon: "mdi-home", text: "Anasayfa", route: "/" },
+          {
+            icon: "mdi-account-edit",
+            text: "Profil",
+            route: "/profil",
+          },
+          {
+            icon: "mdi-comment-text-multiple",
+            text: "Şikayetler",
+            route: "/sikayetler",
+          },
+          {
+            icon: "mdi-domain",
+            text: "Markalar",
+            route: "/markalar",
+          },
+          {
+            icon: "mdi-lead-pencil",
+            text: "Şikayet Yaz",
+            route: "/sikayetyaz",
+          },
+        ]);
+      } else {
+        return (this.sidebarLinks = [
+          { icon: "mdi-home", text: "Anasayfa", route: "/" },
+
+          {
+            icon: "mdi-comment-text-multiple",
+            text: "Şikayetler",
+            route: "/sikayetler",
+          },
+          {
+            icon: "mdi-domain",
+            text: "Markalar",
+            route: "/markalar",
+          },
+        ]);
+      }
+    },
+  }
 };
 </script>
 

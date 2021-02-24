@@ -11,8 +11,8 @@
 
       <v-tabs vertical>
         <v-tab v-for="item in profileMenu" :key="item.title" c>
-          <v-icon left> {{ item.icon }}</v-icon>
-          <span> {{ item.title }}</span>
+          <v-icon left> {{item.icon }}</v-icon>
+          <span> {{item.title }}</span>
         </v-tab>
 
         <!-- Slider Content -->

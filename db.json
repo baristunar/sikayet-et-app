@@ -7,7 +7,7 @@
       "email": "baris@kodluyoruz.org",
       "gender": "erkek",
       "userType": 0,
-      "city": null,
+      "city": "Ankara",
       "phone": 543212212,
       "trIdNo": "111111111",
       "registerType": 1,
@@ -301,7 +301,7 @@
       "trademarkName": "Migros",
       "createdAt": "2021-02-22T10:28:11.659Z",
       "comments": [],
-      "isSolved": false,
+      "isSolved": true,
       "supports": [
         {
           "userID": 1
@@ -326,6 +326,9 @@
       "supports": [
         {
           "userID": 2
+        },
+        {
+          "userID": 1
         }
       ],
       "id": 11
@@ -354,8 +357,26 @@
         }
       ],
       "isSolved": true,
-      "supports": [],
+      "supports": [
+        {
+          "userID": 1
+        }
+      ],
       "id": 12
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "sdadas",
+      "description": "dsadas",
+      "trademarkID": 2,
+      "trademarkName": "Turkcell",
+      "createdAt": "2021-02-24T12:47:40.119Z",
+      "comments": [],
+      "isSolved": true,
+      "supports": [],
+      "id": 13
     }
   ],
   "trademarks": [
@@ -421,6 +442,9 @@
         },
         {
           "complaintID": 11
+        },
+        {
+          "complaintID": 13
         }
       ],
       "rating": null,

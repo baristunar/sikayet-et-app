@@ -8,24 +8,7 @@ import router from "@/router"
 export default ({
     namespaced: true,
     state: {
-        links: [
-            {
-                icon: "mdi-home",
-                text: "Anasayfa",
-                route: "/",
-            },
-            {
-                icon: "mdi-comment-text-multiple",
-                text: "Şikayetler",
-                route: "/sikayetler",
-            },
-            {
-                icon: "mdi-domain",
-                text: "Markalar",
-                route: "/markalar",
-            },
 
-        ],
         loginReject: false,
         activeUser: null,
         newUser: [],
@@ -40,31 +23,7 @@ export default ({
             state.newCompany = pCompanyDatas;
             console.log("state new comp", state.newCompany);
         },
-        setLinks(state) {
-            state.links = [{
-
-                icon: "mdi-home",
-                text: "Anasayfa",
-                route: "/",
-            },
-            {
-                icon: "mdi-account-edit",
-                text: "Profil",
-                route: "/profil",
-            },
-            {
-                icon: "mdi-comment-text-multiple",
-                text: "Şikayetler",
-                route: "/sikayetler",
-            },
-            {
-                icon: "mdi-domain",
-                text: "Markalar",
-                route: "/markalar",
-            },
-            ]
-        },
-
+        
         setUser(state, pUser) {
             state.activeUser = pUser;
             localStorage.user = JSON.stringify(pUser);
@@ -114,7 +73,7 @@ export default ({
                     console.log(login_response.status);
                     if (login_response.status === 200 && login_response.data.length > 0) {
                         commit("setUser", login_response.data[0])
-                        commit("setLinks");
+                       
 
                         router.push("/");
                     }
@@ -134,7 +93,6 @@ export default ({
                     console.log(login_response.status);
                     if (login_response.status === 200 && login_response.data.length > 0) {
                         commit("setUser", login_response.data[0])
-                        commit("setLinks");
                         router.push("/");
                     }
                     else {
@@ -168,7 +126,7 @@ export default ({
         _loginReject: state => state.loginReject,
         _currentUser: state => state.activeUser,
         _isAuthenticated: state => state.activeUser !== null,
-        _menuLinks: state => state.links
+       
     }
 
 })

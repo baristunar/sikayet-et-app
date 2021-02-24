@@ -56,7 +56,7 @@
 
       <!-- Dialog -->
 
-      <v-dialog v-model="dialog" max-width="290">
+      <v-dialog v-model="dialog" max-width="500">
         <v-card>
           <v-card-title class="headline"> Sorununuz çözüldü mü? </v-card-title>
 
