@@ -147,6 +147,7 @@ export default {
       comment: "",
       complaintDetail: [],
       activeUser: JSON.parse(localStorage.getItem("user")),
+      companyData: Object,
     };
   },
   created() {
@@ -192,8 +193,37 @@ export default {
     changeToSolved() {
       if (!this.updateData.isSolved) {
         this.updateData.isSolved = true;
+        appAxios
+          .get(`trademarks/${this.updateData.trademarkID}`)
+          .then((response) => {
+            console.log("calıstı 1");
+            this.companyData = response.data;
+            this.companyData?.solvedComplaints?.push({
+              companyID: this.updateData?.id,
+            });
+
+            console.log("this.companyData", this.companyData);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
         this.$store.dispatch("complaints/updateComplaints", this.updateData);
-        this.updateData = Object;
+
+        setTimeout(() => {
+          appAxios
+            .patch(
+              `trademarks/${this.updateData.trademarkID}`,
+              this.companyData
+            )
+            .then((response) => {
+              console.log("updatetrademark", response);
+            });
+        }, 2000);
+
+        console.log("company", this.companyData);
+        console.log("update data", this.updateData);
+        /*    this.updateData = Object; */
         this.dialog = false;
       }
     },

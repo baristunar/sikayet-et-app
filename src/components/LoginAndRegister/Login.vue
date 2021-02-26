@@ -33,6 +33,7 @@
               :rules="[loginRules.requiredField]"
               label="Şifre"
               required
+              type="password"
               rounded
               outlined
               dense

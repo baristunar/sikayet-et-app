@@ -148,7 +148,7 @@ export default {
 
   data() {
     return {
-      activeUser: JSON.parse(localStorage.getItem("user")),
+      activeUser: JSON.parse(localStorage.getItem("user")) || null,
       supportMessage: "Destekle",
       filterTitles: [
         { id: 1, title: "En yeni" },
@@ -177,14 +177,8 @@ export default {
         );
         this.$store.dispatch("complaints/updateComplaints", data);
       } else {
-        data?.supports.push({ userID: this.activeUser.id });
+        data?.supports.push({ userID: this.activeUser?.id });
         this.$store.dispatch("complaints/updateComplaints", data);
-      }
-    },
-    filterItems(id) {
-      if (id === 4) {
-        console.log("calıstı");
-        return this.complaints.filter((item) => item.comments.sort());
       }
     },
   },
@@ -193,7 +187,7 @@ export default {
       complaints: "complaints/_getComplaints",
     }),
     filteredList() {
-      if (this.search.length > 0) {
+      if (this.search?.length > 0) {
         return this.complaints.filter(
           (item) =>
             item?.description
@@ -204,9 +198,8 @@ export default {
               .includes(this.search.toLowerCase()) ||
             item?.header.toLowerCase().includes(this.search.toLowerCase())
         );
-      }
-      if (this.solvedFilter) {
-        return this.complaints.filter((item) => item.isSolved === true);
+      } else if (this.solvedFilter) {
+        return this.complaints.filter((item) => item?.isSolved === true);
       } else {
         return this.complaints;
       }
