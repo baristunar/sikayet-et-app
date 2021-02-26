@@ -8,7 +8,7 @@
       "gender": "erkek",
       "userType": 0,
       "city": "Ankara",
-      "phone": 543212212,
+      "phone": "5555555555",
       "trIdNo": "111111111",
       "registerType": 1,
       "birthday": "08 / 12 / 1992",
@@ -91,10 +91,31 @@
       "trademarkID": 3,
       "trademarkName": "Adidas",
       "createdAt": "2021-02-26T13:48:26.304Z",
-      "comments": [],
+      "comments": [
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "Sorunum çözülmüştür.",
+          "createdAt": "2021-02-26T14:04:15.516Z"
+        }
+      ],
       "isSolved": true,
       "supports": [],
       "id": 3
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Adidas iade problem",
+      "description": "2 gün önce aldığım ayakkabımı iade etmek istedim ancak reddedildi.",
+      "trademarkID": 3,
+      "trademarkName": "Adidas",
+      "createdAt": "2021-02-26T15:29:00.101Z",
+      "comments": [],
+      "isSolved": false,
+      "supports": [],
+      "id": 4
     }
   ],
   "trademarks": [
@@ -147,6 +168,9 @@
         },
         {
           "complaintID": 3
+        },
+        {
+          "complaintID": 4
         }
       ],
       "rating": 5,

@@ -10,7 +10,7 @@
 
       <v-toolbar-title>
         <router-link to="/" class="link text-uppercase grey--text" link
-          >ŞİKAYET ET</router-link
+          >ŞİKAYETİM VAR</router-link
         >
       </v-toolbar-title>
 
