@@ -14,8 +14,8 @@
         :elevation="10"
       >
         <v-card-title class="mb-3">
-          <v-avatar class="pl-1">
-            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+          <v-avatar class="white--text" color="primary">
+            {{ item.userFirstname[0] }}
           </v-avatar>
           <h3 class="pl-4">{{ item.header }}</h3>
           <h3 class="pl-4 ml-auto">
@@ -37,9 +37,6 @@
         <v-card-text class="text--primary">
           <div>
             {{ item.description }}
-            <router-link class="pl-3" :to="`/sikayetler/${item.id}`"
-              >Devamını oku...</router-link
-            >
           </div>
         </v-card-text>
 

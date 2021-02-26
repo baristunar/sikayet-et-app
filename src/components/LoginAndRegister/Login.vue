@@ -1,6 +1,6 @@
 <template>
   <v-card class="pa-5">
-    <v-row class="d-flex align-center pa-5">
+    <v-row class="d-flex align-center pa-5 justify-space-around">
       <v-col cols="12">
         <v-btn to="/kayit" color="info" class="float-right"
           >Hesabınız yok mu? Üye ol!</v-btn
@@ -9,7 +9,7 @@
       <v-col cols="6" class="d-none d-md-flex">
         <v-img src="@/assets/images/login.jpg" alt="login" />
       </v-col>
-      <v-col cols="6" xs12>
+      <v-col cols="4" xs12>
         <v-card-title> Giriş Yap </v-card-title>
         <v-card-text>
           <v-form ref="form" v-model="valid" lazy-validation class="pa-5">
