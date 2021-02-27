@@ -34,7 +34,7 @@
           }}</span>
         </v-card-subtitle>
 
-        <v-card-text class="text--primary">
+        <v-card-text class="text--primary font">
           <div>
             {{ item.description }}
           </div>
@@ -212,5 +212,9 @@ export default {
   top: 20;
   min-width: 600px;
   overflow: hidden;
+}
+.font {
+font-size: 18px;
+line-height: 30px;
 }
 </style>

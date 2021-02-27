@@ -13,9 +13,7 @@
         :elevation="10"
       >
         <v-card-title class="mb-3 white--text">
-          <v-avatar class="pl-1">
-            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
-          </v-avatar>
+          <v-avatar class="primary"> {{ item.userFirstname[0] }}</v-avatar>
           <h3 class="pl-4 white--text">{{ item.header }}</h3>
           <h3 class="pl-4 ml-auto white--text">
             {{ item.trademarkName }}
@@ -38,7 +36,7 @@
           }}</span>
         </v-card-subtitle>
 
-        <v-card-text class="white--text">
+        <v-card-text class="white--text  font">
           <div>
             {{ item.description }}
           </div>
@@ -105,7 +103,7 @@
           </v-card-subtitle>
         </v-card-title>
 
-        <v-card-text class="text--primary">
+        <v-card-text class="text--primary font">
           <div>{{ item.comment }}</div>
         </v-card-text>
       </v-card>
@@ -239,4 +237,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.font {
+font-size: 18px;
+line-height: 30px;
+}
+</style>

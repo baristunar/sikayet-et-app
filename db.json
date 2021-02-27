@@ -3,16 +3,16 @@
     {
       "firstname": "Barış",
       "lastname": "Tunar",
-      "password": "123",
+      "password": "12345678",
       "email": "baris@kodluyoruz.org",
       "gender": "erkek",
       "userType": 0,
-      "city": "Ankara",
-      "phone": "5555555555",
-      "trIdNo": "111111111",
+      "city": "Amasya",
+      "phone": "",
+      "trIdNo": "1111111",
       "registerType": 1,
-      "birthday": "08 / 12 / 1992",
-      "adress": "ugur mumcu istanbul",
+      "birthday": "01/01/1992",
+      "adress": "",
       "id": 1,
       "complaints": []
     },
@@ -47,6 +47,22 @@
       "phone": null,
       "adress": null,
       "id": 3
+    },
+    {
+      "firstname": "Cengiz",
+      "lastname": "Mataracı",
+      "gender": "Erkek",
+      "userType": 1,
+      "registerType": 1,
+      "city": null,
+      "trIdNo": null,
+      "birthday": null,
+      "complaints": [],
+      "email": "cengiz@example.com",
+      "password": "123",
+      "phone": null,
+      "adress": null,
+      "id": 4
     }
   ],
   "complaints": [
@@ -114,8 +130,143 @@
       "createdAt": "2021-02-26T15:29:00.101Z",
       "comments": [],
       "isSolved": false,
-      "supports": [],
+      "supports": [
+        {
+          "userID": 3
+        }
+      ],
       "id": 4
+    },
+    {
+      "userFirstname": "Cengiz",
+      "userLastname": "Mataracı",
+      "header": "Huawei Matepad T10s Zoom Sorunu",
+      "description": "Huawei Matepad T10s ürün dün elime ulaştı, dün ayarlarını yaptım kurdum her şey tamam bir de baktım zoom ® Instagram ® vs hiçbiri yok arkadaş tablet alıyorsak en azında zoom olsun sonuçta çocukların eğitimi için alıyoruz. Yok apk kurun oda 3. Şahıs muhabbeti oluyor. Yani buna bir çözüm bulun yoksa Huawei'den vazgeçeceğim. Çünkü Huawei ürünlerini severek alıyorum.",
+      "trademarkID": 2,
+      "trademarkName": "Huawei",
+      "createdAt": "2021-02-27T10:05:48.293Z",
+      "comments": [
+        {
+          "userID": 3,
+          "username": "Zübeyde Karayel",
+          "comment": "Aynı sorunu ben de yaşamaktayım",
+          "createdAt": "2021-02-27T10:06:17.066Z"
+        },
+        {
+          "userID": 1,
+          "username": "Barış Tunar",
+          "comment": "Ben de aynı sorunu yaşıyorum.",
+          "createdAt": "2021-02-27T11:43:36.132Z"
+        }
+      ],
+      "isSolved": false,
+      "supports": [
+        {
+          "userID": 3
+        },
+        {
+          "userID": 1
+        }
+      ],
+      "id": 5
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Adidas iade problemi",
+      "description": "2 gün önce aldığım ayakkabımı iade etme talebim reddedildi",
+      "trademarkID": 3,
+      "trademarkName": "Adidas",
+      "createdAt": "2021-02-27T11:42:59.829Z",
+      "comments": [],
+      "isSolved": true,
+      "supports": [],
+      "id": 6
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Nike Fabrika Hatası Ürün!",
+      "description": "Nike ryz 365 ayakkabı modelinin iki farklı rengini Sneaks Up ® sitesinden aldık. Aldıktan 1-2 hafta sonra beyaz olanının dikiş yeri açıldı. Daha sonradan mağazalarına gittik, (muazzam çalışanları var ) doğru düzgün kullanılmamış olduğu anlaşıldığı halde, Nike müşteri hatası olarak ürün değişimini reddetti.\n\nŞu ana kadar vazgeçemediğim bir markaydı, ama bariz kendi hatası olduğunu kabul etmeyen, bir firmayı asla bundan sonra tercih etmem ve dibine kadar kendisini kötüleyecek olan eski bir müşterisi var.",
+      "trademarkID": 4,
+      "trademarkName": "Nike",
+      "createdAt": "2021-02-27T11:46:21.830Z",
+      "comments": [],
+      "isSolved": false,
+      "supports": [],
+      "id": 7
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Nike Ayakkabı Üretim Hatası",
+      "description": "FLO mağazasından 6 ay önce aldığım Nike ayakkabı satin aldığımdan beri sol teki ayak tabanımı vurmakta. Süreç içerisinde ayakkabının arka bölümde plastiği parçalanıp astarını kestiğini fark ettim. Ayağımı vuran içindeki plastik parçanın üretim hatası olduğu gerekçesiyle iade ya da değişimini talep ediyorum. Nike gibi bir markaya bu kadar basit bir hata yakışmıyor. Kesinlikle mağduriyetimin giderilmesini rica ediyorum.",
+      "trademarkID": 4,
+      "trademarkName": "Nike",
+      "createdAt": "2021-02-27T11:47:01.459Z",
+      "comments": [],
+      "isSolved": true,
+      "supports": [],
+      "id": 8
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Adidas Mont Kaz Tüyü Çıkarma",
+      "description": "Yaklaşık bir ay önce Hepsiburada ® internet sitesi üzerinden aldığım adidas gh4589 ESS down jacket erkek mont kaz tüyü döküyor. Beden eğitimi ve spor öğretmeni olmam nedeniyle çok uzun zamandır severek kullandığım markaya yakıştıramadım.",
+      "trademarkID": 3,
+      "trademarkName": "Adidas",
+      "createdAt": "2021-02-27T11:48:00.464Z",
+      "comments": [],
+      "isSolved": false,
+      "supports": [],
+      "id": 9
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Adidas Ayakkabının Ön Tarafında Açılma",
+      "description": "2 ay oldu Grand court base ayakkabı aldım 1 ayda evde durdu giymedim şu anda ön taraftan patladı. Almadan önce derdim adidas gibi marka böyle sorunlu olmaz çok şikayet var ® diyordum doğruymuş. Çok pişmanım aldığıma. Hiç memnun kalamadım. Bir daha almam.",
+      "trademarkID": 3,
+      "trademarkName": "Adidas",
+      "createdAt": "2021-02-27T11:48:51.637Z",
+      "comments": [],
+      "isSolved": false,
+      "supports": [],
+      "id": 10
+    },
+    {
+      "userFirstname": "Cengiz",
+      "userLastname": "Mataracı",
+      "userID": 4,
+      "header": "Adidas Ayakkabı Arkasının Yırtılması Şikayet",
+      "description": "Adidas ayakkabı aldım advantage modeli ayakkabının içi arka kısmı yırtıldı ikisi de fişi nerede hatırlamıyorum daha önce de bu sorunu yaşadım. Adidas :( kullanıcı hatası olduğunu düşünmüyorum ama ilgilenir misiniz. Acaba fiş yok diye ilgilenmez misiniz",
+      "trademarkID": 3,
+      "trademarkName": "Adidas",
+      "createdAt": "2021-02-27T11:49:44.355Z",
+      "comments": [],
+      "isSolved": false,
+      "supports": [],
+      "id": 11
+    },
+    {
+      "userFirstname": "Barış",
+      "userLastname": "Tunar",
+      "userID": 1,
+      "header": "Nike krampon çivisi kırıldı",
+      "description": "Nike markası aldığımız kramponlar daha garantisi dolmadan dişi kırıldı ve çok nadir giyilmesine rağmen böyle bir problem yaşadık garantiye gönderdiğiniz halde kabul edilmedi. Ayıplı bir üründür. Bu bu kadar büyük bir marka ürünün arkasında durmuyor biz markaya güvenerek ürün alıp bir dünya para veriyoruz ve böyle bir problem yaşıyoruz",
+      "trademarkID": 4,
+      "trademarkName": "Nike",
+      "createdAt": "2021-02-27T13:49:55.295Z",
+      "comments": [],
+      "isSolved": true,
+      "supports": [],
+      "id": 12
     }
   ],
   "trademarks": [
@@ -144,6 +295,9 @@
       "complaints": [
         {
           "complaintID": 2
+        },
+        {
+          "complaintID": 5
         }
       ],
       "rating": 5,
@@ -160,6 +314,9 @@
       "solvedComplaints": [
         {
           "companyID": 3
+        },
+        {
+          "companyID": 6
         }
       ],
       "complaints": [
@@ -171,6 +328,18 @@
         },
         {
           "complaintID": 4
+        },
+        {
+          "complaintID": 6
+        },
+        {
+          "complaintID": 9
+        },
+        {
+          "complaintID": 10
+        },
+        {
+          "complaintID": 11
         }
       ],
       "rating": 5,
@@ -184,8 +353,25 @@
       "companyName": "Nike",
       "companyLogo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASoAAACpCAMAAACrt4DfAAAAdVBMVEURERH///8AAAAODg4LCwsGBgbU1NTw8PCioqLr6+vj4+P6+voICAhJSUmnp6dFRUW0tLSSkpJSUlKCgoI2NjbDw8NxcXHY2NjPz89ra2sXFxd5eXkiIiL19fU9PT29vb1fX18nJyd/f3+Li4tcXFyQkJAvLy/l3P87AAACiklEQVR4nO3ZiZKqMBCFYdKAgCgK7svVcX3/R7wE3BBch6qh4P8eIGVOpTtNNAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaBir/CU7nfLXrADplpuVKSJRNC91zWoQ1zBLW0zHZAzWQWSXtmR1iBtKOSvpmKyfwPPdpdQyqa2SMg6VHefUDVtKTRZxYCUsWDkSqeDXh0ofp+Fg5Cil1j0pJfnqkY2vhr8qFh2TjPteHJNywrmUVMyVY4qn2t9vztRVt3fbKjEZ17TyEjJSX9dfJ46pF079NKek8sr9cZUiu3iP4y92qKvuuF07p5iUV+PKS0hPb3P1aavSzWnWb6uL1qzOlafpRhVbfrDLpDlF7kTd6K/qeuddSaB36s/fjcrSI8Hu0pxUeudJvSsvkZafUpt3okqa02LtqYzWuP4HSpNTGXVfnoqkOQVtdadf7zvvSn5OO37+BdhJv1f8+5yc0GpIUHFU51PyeATVzem4G+ViiqfN2t95Ny6HSqlFUVa6OS1P3yuNrbyUTK9bH95vXDenfb45JWo/bd6zlje796Ob56X0MWVaUHVa/afNHBlkS2ooZ8PB6F9xTM2YNnP0d3K2rkaB6wajSWFEp8qTWr5tvmCK8ziTh5XXuAOlWZvPgmrYnXfr/FHzFudgNDaoOKr9R5XXsDsvQ6L3cvL1nffXP/Zv2cN3gvJCo4l3XpYpD2eni2nDK+8sN1fda+S0Weh5s2rotPmArJ9WHgfq6vQfRA53Xp5tFjyyTLZUXoGOuNmcWocllVfMFOOQvkv5ztSdCbPBE/rxfLlaHZOHKs7TK5ZtW6QEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4MZ/CngV76LAlSkAAAAASUVORK5CYII=",
       "registerType": 2,
-      "solvedComplaints": [],
-      "complaints": [],
+      "solvedComplaints": [
+        {
+          "companyID": 8
+        },
+        {
+          "companyID": 12
+        }
+      ],
+      "complaints": [
+        {
+          "complaintID": 7
+        },
+        {
+          "complaintID": 8
+        },
+        {
+          "complaintID": 12
+        }
+      ],
       "rating": 5,
       "email": "nike@example.com",
       "password": "123",
